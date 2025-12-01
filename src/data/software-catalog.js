@@ -14,7 +14,7 @@ export const softwareCatalog = [
     name: 'Brave Browser',
     description: 'Privacy-focused browser with ad blocking',
     category: 'browsers',
-    wingetId: 'Brave.Brave',
+    wingetId: 'BraveSoftware.BraveBrowser',
     icon: 'SiBrave',
     iconColor: '#FB542B',
     popular: true,
