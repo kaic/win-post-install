@@ -33,9 +33,6 @@ export const softwareCatalog = [
     requiresAdmin: true,
     license: 'open-source',
   },
-  // ========================================
-  // BROWSERS
-  // ========================================
   {
     id: 'chrome',
     name: 'Google Chrome',
@@ -84,9 +81,6 @@ export const softwareCatalog = [
     license: 'free',
   },
 
-  // ========================================
-  // COMMUNICATION
-  // ========================================
   // ========================================
   // COMMUNICATION
   // ========================================
@@ -298,9 +292,6 @@ export const softwareCatalog = [
     requiresAdmin: true,
     license: 'free',
   },
-  // ========================================
-  // MEDIA PLAYERS
-  // ========================================
   {
     id: 'vlc',
     name: 'VLC Media Player',
@@ -380,9 +371,6 @@ export const softwareCatalog = [
     requiresAdmin: true,
     license: 'free',
   },
-  // ========================================
-  // PRODUCTIVITY
-  // ========================================
   {
     id: 'notion',
     name: 'Notion',
@@ -654,9 +642,6 @@ export const softwareCatalog = [
     requiresAdmin: true,
     license: 'open-source',
   },
-  // ========================================
-  // DEVELOPMENT TOOLS
-  // ========================================
   {
     id: 'vscode',
     name: 'Visual Studio Code',
@@ -757,9 +742,6 @@ export const softwareCatalog = [
     requiresAdmin: true,
     license: 'open-source',
   },
-  // ========================================
-  // MEDIA CREATION
-  // ========================================
   {
     id: 'obs-studio',
     name: 'OBS Studio',
@@ -866,9 +848,6 @@ export const softwareCatalog = [
     requiresAdmin: true,
     license: 'free',
   },
-  // ========================================
-  // GAMING
-  // ========================================
   {
     id: 'steam',
     name: 'Steam',
