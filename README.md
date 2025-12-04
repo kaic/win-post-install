@@ -14,7 +14,7 @@ A web-based tool that generates customized Windows post-installation batch scrip
 
 ## Demo
 
-Visit the live application: [https://kaic.github.io/win-post-install/](kaic.me/win-post-install)
+Visit the live application: [https://kaic.me/win-post-install](https://kaic.me/win-post-install)
 
 ## Technologies
 
