@@ -113,6 +113,68 @@ export const CpuZIcon = ({ size = 24, ...props }) => (
   </svg>
 );
 
+// GPU-Z - Graphics card circuit board
+export const GpuZIcon = ({ size = 24, ...props }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    style={{ flexShrink: 0 }}
+    {...props}
+  >
+    <defs>
+      <linearGradient id="gpuz-pcb" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#5a9a5a"/>
+        <stop offset="100%" stopColor="#3d7a3d"/>
+      </linearGradient>
+      <linearGradient id="gpuz-chip" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#b0b0b0"/>
+        <stop offset="100%" stopColor="#707070"/>
+      </linearGradient>
+    </defs>
+    {/* PCB (green circuit board) */}
+    <rect x="4" y="3" width="16" height="14" rx="0.5" fill="url(#gpuz-pcb)"/>
+    {/* Circuit traces */}
+    <path d="M6 5 L8 5" stroke="#d4af37" strokeWidth="0.3" opacity="0.7"/>
+    <path d="M8 5 L8 7" stroke="#d4af37" strokeWidth="0.3" opacity="0.7"/>
+    <path d="M14 5 L16 5 L16 8" stroke="#d4af37" strokeWidth="0.3" opacity="0.7"/>
+    <path d="M6 9 L7 9 L7 11" stroke="#d4af37" strokeWidth="0.3" opacity="0.7"/>
+    <path d="M18 10 L16 10" stroke="#d4af37" strokeWidth="0.3" opacity="0.7"/>
+    {/* Small component (top left - red) */}
+    <rect x="6" y="5" width="2" height="2" rx="0.2" fill="#b33"/>
+    {/* Small components (top right) */}
+    <rect x="15" y="5" width="2.5" height="1.8" rx="0.2" fill="url(#gpuz-chip)"/>
+    {/* Main GPU chip (center) */}
+    <rect x="9" y="7" width="6" height="6" rx="0.3" fill="url(#gpuz-chip)"/>
+    <rect x="9.5" y="7.5" width="5" height="5" rx="0.2" fill="#505050" opacity="0.3"/>
+    {/* Side components */}
+    <rect x="16" y="8" width="2.5" height="2" rx="0.2" fill="url(#gpuz-chip)"/>
+    <rect x="16" y="11" width="2.5" height="2" rx="0.2" fill="url(#gpuz-chip)"/>
+    {/* Gold edge connectors (bottom) */}
+    <rect x="5" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="6.5" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="8" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="9.5" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="11" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="12.5" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="14" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="15.5" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="17" y="17" width="1" height="4" fill="#e6c547"/>
+    <rect x="18.5" y="17" width="1" height="4" fill="#e6c547"/>
+    {/* Connector spacing (darker) */}
+    <rect x="5.8" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="7.3" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="8.8" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="10.3" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="11.8" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="13.3" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="14.8" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="16.3" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+    <rect x="17.8" y="17" width="0.3" height="4" fill="#c4a030" opacity="0.5"/>
+  </svg>
+);
+
 // CCleaner - Broom with official orange/red CCleaner colors
 export const CCleanerIcon = ({ size = 24, ...props }) => (
   <svg
@@ -433,6 +495,7 @@ export default {
   GoogleDriveIcon,
   WinRarIcon,
   CpuZIcon,
+  GpuZIcon,
   CCleanerIcon,
   BleachBitIcon,
   DriverBoosterIcon,

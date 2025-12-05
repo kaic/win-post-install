@@ -126,6 +126,7 @@ export {
   GoogleDriveIcon,
   WinRarIcon,
   CpuZIcon,
+  GpuZIcon,
   CCleanerIcon,
   BleachBitIcon,
   DriverBoosterIcon,
