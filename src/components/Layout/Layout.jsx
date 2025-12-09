@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
         </div>
 
         {/* Window Content */}
-        <div style={{ padding: '8px', maxHeight: 'calc(100vh - 100px)', overflow: 'auto' }}>
+        <div style={{ padding: '8px', display: 'flex', flexDirection: 'column', maxHeight: 'calc(100vh - 100px)' }}>
           {children}
         </div>
       </div>
