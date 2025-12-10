@@ -17,17 +17,31 @@ jobs:
           fetch-depth: 0
 
       - name: Generate changelog
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          # Get all commits in descending order (newest first)
-          git log --pretty=format:'%ad|%s|%an' --date=short | while IFS='|' read -r date message author; do
-            echo "$date|$message|$author"
+          # Get all commits in descending order (newest first) with GitHub username
+          git log --pretty=format:'%ad|%s|%ae' --date=short | while IFS='|' read -r date message email; do
+            # Try to get GitHub username from email
+            username=$(echo "$email" | sed -n 's/.*+\([^@]*\)@users.noreply.github.com/\1/p')
+            if [ -z "$username" ]; then
+              # Try to get username from regular email via GitHub API
+              username=$(gh api "/search/users?q=$email+in:email" --jq '.items[0].login' 2>/dev/null || echo "")
+            fi
+            if [ -z "$username" ]; then
+              # Fallback to author name
+              author_name=$(git log --format='%an' -1 --author="$email" 2>/dev/null || echo "unknown")
+              echo "$date|$message|$author_name|"
+            else
+              echo "$date|$message|$username|https://github.com/$username"
+            fi
           done > /tmp/commits.txt
 
           # Generate changelog content grouped by date
           echo "" > /tmp/changelog_content.md
           current_date=""
 
-          while IFS='|' read -r date message author; do
+          while IFS='|' read -r date message author link; do
             if [ "$date" != "$current_date" ]; then
               if [ -n "$current_date" ]; then
                 echo "" >> /tmp/changelog_content.md
@@ -36,7 +50,11 @@ jobs:
               echo "" >> /tmp/changelog_content.md
               current_date="$date"
             fi
-            echo "- $message (@$author)" >> /tmp/changelog_content.md
+            if [ -n "$link" ]; then
+              echo "- $message ([@$author]($link))" >> /tmp/changelog_content.md
+            else
+              echo "- $message (@$author)" >> /tmp/changelog_content.md
+            fi
           done < /tmp/commits.txt
 
           # Update CHANGELOG.md between markers
