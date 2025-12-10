@@ -11,6 +11,8 @@ This changelog is automatically generated from git commits.
 
 ### 2025-12-10
 
+- ci: add test job to pipeline ([@Kaic Bento](https://github.com/kaic))
+- test: add Jest and catalog validation tests ([@Kaic Bento](https://github.com/kaic))
 - fix: use gh CLI to get author username for changelog ([@Kaic Bento](https://github.com/kaic))
 - fix: use pipe delimiter in sed for changelog workflow ([@Kaic Bento](https://github.com/kaic))
 - ci: add PR links and author profile links to changelog ([@Kaic Bento](https://github.com/kaic))
