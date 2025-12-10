@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2025-12-10
 
+- docs: add generic issue template (@Kaic Bento)
 - ci: exclude bot commits from changelog (@Kaic Bento)
 - ci: simplify changelog to avoid API rate limits (@Kaic Bento)
 - ci: add author profile links to changelog (@Kaic Bento)
