@@ -11,6 +11,8 @@ This changelog is automatically generated from git commits.
 
 ### 2025-12-10
 
+- feat: add theme toggle button in header (@Kaic Bento)
+- feat: add dark mode with Win98 aesthetic (@Kaic Bento)
 - docs: add generic issue template (@Kaic Bento)
 - ci: exclude bot commits from changelog (@Kaic Bento)
 - ci: simplify changelog to avoid API rate limits (@Kaic Bento)
