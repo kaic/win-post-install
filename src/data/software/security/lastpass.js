@@ -2,7 +2,7 @@ export default {
   "id": "lastpass",
   "name": "LastPass",
   "description": "Password manager",
-  "category": "security-privacy",
+  "category": "security",
   "wingetId": "LastPass.LastPass",
   "icon": "SiLastpass",
   "iconColor": "#D32D27",

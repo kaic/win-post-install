@@ -127,7 +127,7 @@ import vulkan from './software/runtimes/vulkan.js';
 import onepassword from './software/security/1password.js';
 import bitwarden from './software/security/bitwarden.js';
 import keepassxc from './software/security/keepassxc.js';
-import lastpass from './software/security-privacy/lastpass.js';
+import lastpass from './software/security/lastpass.js';
 import malwarebytes from './software/security/malwarebytes.js';
 import nordvpn from './software/security/nordvpn.js';
 import protonvpn from './software/security/protonvpn.js';
