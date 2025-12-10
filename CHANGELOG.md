@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2025-12-10
 
+- docs: move changelog link to top of README (@Kaic Bento)
 - Create FUNDING.yml (@Kaic)
 - refactor: split catalog into individual files per software/config (#12) (@Kaic)
 - feat: add theme toggle button in header (@Kaic Bento)
