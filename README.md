@@ -2,6 +2,16 @@
 
 A web-based tool that generates customized Windows post-installation batch scripts. Select from 115 software applications and 80 Windows configurations to create a personalized setup script.
 
+---
+
+## Support This Project
+
+If you find this tool useful, consider sponsoring to help keep it alive and actively maintained!
+
+<a href="https://github.com/sponsors/kaic">
+  <img src="https://img.shields.io/badge/Sponsor-♥-ea4aaa?style=for-the-badge&logo=github-sponsors" alt="Sponsor kaic" />
+</a>
+
 ## How to Use (Production)
 
 Just open the live version:
@@ -151,51 +161,22 @@ win-post-install/
 
 ## Contributing
 
-Contributions are welcome! Here's how you can help:
+Contributions are welcome! Please read our **[Contributing Guide](CONTRIBUTING.md)** for detailed instructions on:
 
-### Reporting Issues
+- Development setup
+- Adding software to the catalog
+- Adding system configurations
+- Modifying the UI
+- Code style guidelines
+- Pull request process
 
-- Use GitHub Issues to report bugs or request features
-- Include detailed steps to reproduce bugs
-- Suggest new software or configurations with relevant details
-
-### Submitting Changes
+### Quick Start
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Make your changes and test thoroughly
+2. Create a feature branch: `git checkout -b feat/my-feature`
+3. Make your changes and test locally
 4. Commit using conventional commits: `git commit -m "feat: add new feature"`
-5. Push to your fork: `git push origin feature/my-feature`
-6. Open a Pull Request with a clear description
-
-### Commit Convention
-
-This project uses conventional commits:
-
-- `feat:` New features
-- `fix:` Bug fixes
-- `docs:` Documentation changes
-- `chore:` Maintenance tasks
-- `refactor:` Code refactoring
-- `test:` Test additions or changes
-
-### Adding Software
-
-When adding new software:
-- Verify the winget package ID is correct
-- Use official icons when available
-- Provide accurate descriptions and website links
-- Test the installation on a Windows machine
-- Place in the appropriate category
-
-### Adding Configurations
-
-When adding configurations:
-- Test changes on Windows 10 and 11
-- Document any side effects or warnings
-- Mark as recommended only if widely beneficial
-- Specify if restart is required
-- Include reversible commands when possible
+5. Push and open a Pull Request
 
 ## License
 
