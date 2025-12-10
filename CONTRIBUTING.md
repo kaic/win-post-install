@@ -87,7 +87,9 @@ win-post-install/
 
 ### Adding Software to the Catalog
 
-Software is defined in `src/data/software-catalog.js`.
+Each software is defined in its own file: `src/data/software/<category>/<software-id>.js`
+
+The main catalog file `src/data/software-catalog.js` automatically imports all individual files.
 
 #### Software Object Schema
 
@@ -152,28 +154,33 @@ If an official icon doesn't exist, use a generic icon from Feather (`fi`) or cre
 
 #### Example: Adding New Software
 
+1. Create a new file: `src/data/software/productivity/notion.js`
+2. Add the software object:
+
 ```javascript
-// In src/data/software-catalog.js
-
-import { SiNotion } from 'react-icons/si';
-
-// Add to the appropriate section in the catalog array:
-{
+export default {
   id: 'notion',
   name: 'Notion',
   description: 'All-in-one workspace for notes, docs, and collaboration',
   category: 'productivity',
   wingetId: 'Notion.Notion',
-  icon: SiNotion,
+  icon: 'SiNotion',
   iconColor: '#000000',
   popular: true,
+  requiresAdmin: true,
   license: 'free'
-}
+};
 ```
+
+3. The software will be automatically imported by `software-catalog.js`
+
+**No need to edit the main catalog file!** Just create your file in the correct category folder.
 
 ### Adding System Configurations
 
-Configurations are defined in `src/data/configurations.js`.
+Each configuration is defined in its own file: `src/data/configurations/<category>/<config-id>.js`
+
+The main configurations file `src/data/configurations.js` automatically imports all individual files.
 
 #### Configuration Object Schema
 
@@ -212,10 +219,11 @@ Configurations are defined in `src/data/configurations.js`.
 
 #### Example: Adding New Configuration
 
-```javascript
-// In src/data/configurations.js
+1. Create a new file: `src/data/configurations/privacy/disable-web-search.js`
+2. Add the configuration object:
 
-{
+```javascript
+export default {
   id: 'disable-web-search',
   name: 'Disable Web Search in Start Menu',
   description: 'Prevents Windows from searching the web when using Start Menu search',
@@ -226,8 +234,12 @@ Configurations are defined in `src/data/configurations.js`.
   recommended: true,
   requiresRestart: false,
   requiresAdmin: false
-}
+};
 ```
+
+3. The configuration will be automatically imported by `configurations.js`
+
+**No need to edit the main configurations file!** Just create your file in the correct category folder.
 
 ### Modifying the UI
 
