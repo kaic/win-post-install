@@ -1,1565 +1,304 @@
 /**
- * Software Catalog
- * Complete database of available software with winget package IDs
- * All package IDs verified via winget.run
- * Icons use react-icons library (Si = Simple Icons, Fa = Font Awesome)
+ * Software Catalog Aggregator
+ * Imports all software from individual files
  */
 
+// Antivirus
+import avast from './software/antivirus/avast.js';
+import avg from './software/antivirus/avg.js';
+import bitdefender from './software/antivirus/bitdefender.js';
+import clamwin from './software/antivirus/clamwin.js';
+import kaspersky from './software/antivirus/kaspersky.js';
+
+// Browsers
+import brave from './software/browsers/brave.js';
+import chrome from './software/browsers/chrome.js';
+import chromium from './software/browsers/chromium.js';
+import firefox from './software/browsers/firefox.js';
+import opera from './software/browsers/opera.js';
+import vivaldi from './software/browsers/vivaldi.js';
+
+// Cloud Storage
+import box from './software/cloud-storage/box.js';
+import dropbox from './software/cloud-storage/dropbox.js';
+import googleDrive from './software/cloud-storage/google-drive.js';
+import icloud from './software/cloud-storage/icloud.js';
+import mega from './software/cloud-storage/mega.js';
+import protonDrive from './software/cloud-storage/proton-drive.js';
+
+// Communication
+import discord from './software/communication/discord.js';
+import mailbird from './software/communication/mailbird.js';
+import protonMailBridge from './software/communication/proton-mail-bridge.js';
+import signal from './software/communication/signal.js';
+import slack from './software/communication/slack.js';
+import teams from './software/communication/teams.js';
+import telegram from './software/communication/telegram.js';
+import thunderbird from './software/communication/thunderbird.js';
+import whatsapp from './software/communication/whatsapp.js';
+import zoom from './software/communication/zoom.js';
+
+// Development
+import androidStudio from './software/development/android-studio.js';
+import cmder from './software/development/cmder.js';
+import dbeaver from './software/development/dbeaver.js';
+import dockerDesktop from './software/development/docker-desktop.js';
+import git from './software/development/git.js';
+import githubDesktop from './software/development/github-desktop.js';
+import insomnia from './software/development/insomnia.js';
+import intellijCommunity from './software/development/intellij-community.js';
+import jetbrainsToolbox from './software/development/jetbrains-toolbox.js';
+import neovim from './software/development/neovim.js';
+import nodejs from './software/development/nodejs.js';
+import notepadPlusplus from './software/development/notepad-plusplus.js';
+import postman from './software/development/postman.js';
+import putty from './software/development/putty.js';
+import pycharmCommunity from './software/development/pycharm-community.js';
+import python from './software/development/python.js';
+import sublimeText from './software/development/sublime-text.js';
+import terminus from './software/development/terminus.js';
+import vscode from './software/development/vscode.js';
+import webstorm from './software/development/webstorm.js';
+
+// Drivers
+import amdAdrenalin from './software/drivers/amd-adrenalin.js';
+import driverBooster from './software/drivers/driver-booster.js';
+import driverEasy from './software/drivers/driver-easy.js';
+import nvidiaGeforceExperience from './software/drivers/nvidia-geforce-experience.js';
+import snappyDriver from './software/drivers/snappy-driver.js';
+
+// Gaming
+import battlenet from './software/gaming/battlenet.js';
+import eaApp from './software/gaming/ea-app.js';
+import epicGames from './software/gaming/epic-games.js';
+import gogGalaxy from './software/gaming/gog-galaxy.js';
+import hydraLauncher from './software/gaming/hydra-launcher.js';
+import retroarch from './software/gaming/retroarch.js';
+import riotClient from './software/gaming/riot-client.js';
+import steam from './software/gaming/steam.js';
+import ubisoftConnect from './software/gaming/ubisoft-connect.js';
+
+// Media Creation
+import audacity from './software/media-creation/audacity.js';
+import blender from './software/media-creation/blender.js';
+import gimp from './software/media-creation/gimp.js';
+import handbrake from './software/media-creation/handbrake.js';
+import inkscape from './software/media-creation/inkscape.js';
+import kdenlive from './software/media-creation/kdenlive.js';
+import obsStudio from './software/media-creation/obs-studio.js';
+
+// Media Players
+import aimp from './software/media-players/aimp.js';
+import appleMusic from './software/media-players/apple-music.js';
+import deezer from './software/media-players/deezer.js';
+import foobar2000 from './software/media-players/foobar2000.js';
+import itunes from './software/media-players/itunes.js';
+import mpv from './software/media-players/mpv.js';
+import spotify from './software/media-players/spotify.js';
+import tidal from './software/media-players/tidal.js';
+import vlc from './software/media-players/vlc.js';
+import winamp from './software/media-players/winamp.js';
+import youtubeMusic from './software/media-players/youtube-music.js';
+
+// Productivity
+import acrobatReader from './software/productivity/acrobat-reader.js';
+import evernote from './software/productivity/evernote.js';
+import libreoffice from './software/productivity/libreoffice.js';
+import notion from './software/productivity/notion.js';
+import notionCalendar from './software/productivity/notion-calendar.js';
+import obsidian from './software/productivity/obsidian.js';
+import onenote from './software/productivity/onenote.js';
+import sumatraPdf from './software/productivity/sumatra-pdf.js';
+
+// Runtimes
+import adobeAir from './software/runtimes/adobe-air.js';
+import directx from './software/runtimes/directx.js';
+import dotnetDesktop8 from './software/runtimes/dotnet-desktop-8.js';
+import dotnetFramework from './software/runtimes/dotnet-framework.js';
+import dotnetRuntime6 from './software/runtimes/dotnet-runtime-6.js';
+import javaJdk21 from './software/runtimes/java-jdk-21.js';
+import javaRuntime from './software/runtimes/java-runtime.js';
+import openal from './software/runtimes/openal.js';
+import openjdk21 from './software/runtimes/openjdk-21.js';
+import vcredistAll from './software/runtimes/vcredist-all.js';
+import vulkan from './software/runtimes/vulkan.js';
+
+// Security
+import onepassword from './software/security/1password.js';
+import bitwarden from './software/security/bitwarden.js';
+import keepassxc from './software/security/keepassxc.js';
+import lastpass from './software/security-privacy/lastpass.js';
+import malwarebytes from './software/security/malwarebytes.js';
+import nordvpn from './software/security/nordvpn.js';
+import protonvpn from './software/security/protonvpn.js';
+
+// Utilities
+import sevenzip from './software/utilities/7zip.js';
+import bleachbit from './software/utilities/bleachbit.js';
+import ccleaner from './software/utilities/ccleaner.js';
+import cpuZ from './software/utilities/cpu-z.js';
+import emule from './software/utilities/emule.js';
+import everything from './software/utilities/everything.js';
+import gpuZ from './software/utilities/gpu-z.js';
+import hwmonitor from './software/utilities/hwmonitor.js';
+import nero from './software/utilities/nero.js';
+import poweriso from './software/utilities/poweriso.js';
+import powertoys from './software/utilities/powertoys.js';
+import qbittorrent from './software/utilities/qbittorrent.js';
+import rainmeter from './software/utilities/rainmeter.js';
+import revoUninstaller from './software/utilities/revo-uninstaller.js';
+import sharex from './software/utilities/sharex.js';
+import ultraiso from './software/utilities/ultraiso.js';
+import winrar from './software/utilities/winrar.js';
+
 export const softwareCatalog = [
-  // ========================================
-  // BROWSERS
-  // ========================================
-  {
-    id: 'brave',
-    name: 'Brave Browser',
-    description: 'Privacy-focused browser with ad blocking',
-    category: 'browsers',
-    wingetId: 'BraveSoftware.BraveBrowser',
-    icon: 'SiBrave',
-    iconColor: '#FB542B',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'chromium',
-    name: 'Chromium',
-    description: 'Open-source browser project behind Chrome',
-    category: 'browsers',
-    wingetId: 'Hibbiki.Chromium',
-    icon: 'SiGooglechrome',
-    iconColor: '#4285F4',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'chrome',
-    name: 'Google Chrome',
-    description: 'Fast, secure web browser by Google',
-    category: 'browsers',
-    wingetId: 'Google.Chrome',
-    icon: 'ChromeIcon',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'firefox',
-    name: 'Mozilla Firefox',
-    description: 'Open-source web browser',
-    category: 'browsers',
-    wingetId: 'Mozilla.Firefox',
-    icon: 'SiFirefox',
-    iconColor: '#FF7139',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'opera',
-    name: 'Opera',
-    description: 'Feature-rich browser with built-in VPN',
-    category: 'browsers',
-    wingetId: 'Opera.Opera',
-    icon: 'SiOpera',
-    iconColor: '#FF1B2D',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'vivaldi',
-    name: 'Vivaldi',
-    description: 'Highly customizable browser',
-    category: 'browsers',
-    wingetId: 'VivaldiTechnologies.Vivaldi',
-    icon: 'SiVivaldi',
-    iconColor: '#EF3939',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
+  // Antivirus
+  avast,
+  avg,
+  bitdefender,
+  clamwin,
+  kaspersky,
 
-  // ========================================
-  // COMMUNICATION
-  // ========================================
-  {
-    id: 'discord',
-    name: 'Discord',
-    description: 'Voice, video, and text chat platform',
-    category: 'communication',
-    wingetId: 'Discord.Discord',
-    icon: 'SiDiscord',
-    iconColor: '#5865F2',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'mailbird',
-    name: 'Mailbird',
-    description: 'Modern email client for Windows',
-    category: 'communication',
-    wingetId: 'Mailbird.Mailbird',
-    icon: 'FaEnvelope',
-    iconColor: '#2BA6DE',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'teams',
-    name: 'Microsoft Teams',
-    description: 'Microsoft\'s collaboration platform',
-    category: 'communication',
-    wingetId: 'Microsoft.Teams',
-    icon: 'FaMicrosoft',
-    iconColor: '#6264A7',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'thunderbird',
-    name: 'Mozilla Thunderbird',
-    description: 'Open-source email client',
-    category: 'communication',
-    wingetId: 'Mozilla.Thunderbird',
-    icon: 'SiThunderbird',
-    iconColor: '#0A84FF',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'proton-mail-bridge',
-    name: 'Proton Mail Bridge',
-    description: 'Bridge for Proton Mail with email clients',
-    category: 'communication',
-    wingetId: 'Proton.ProtonMailBridge',
-    icon: 'SiProtonmail',
-    iconColor: '#6D4AFF',
-    popular: false,
-    requiresAdmin: true,
-    license: 'freemium',
-  },
-  {
-    id: 'signal',
-    name: 'Signal',
-    description: 'Private messaging with end-to-end encryption',
-    category: 'communication',
-    wingetId: 'OpenWhisperSystems.Signal',
-    icon: 'SiSignal',
-    iconColor: '#3A76F0',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'slack',
-    name: 'Slack',
-    description: 'Team collaboration and messaging',
-    category: 'communication',
-    wingetId: 'SlackTechnologies.Slack',
-    icon: 'SiSlack',
-    iconColor: '#4A154B',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'telegram',
-    name: 'Telegram',
-    description: 'Fast, secure messaging app',
-    category: 'communication',
-    wingetId: 'Telegram.TelegramDesktop',
-    icon: 'SiTelegram',
-    iconColor: '#26A5E4',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'whatsapp',
-    name: 'WhatsApp',
-    description: 'Messaging and video calling',
-    category: 'communication',
-    wingetId: 'WhatsApp.WhatsApp',
-    icon: 'SiWhatsapp',
-    iconColor: '#25D366',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'zoom',
-    name: 'Zoom',
-    description: 'Video conferencing and meetings',
-    category: 'communication',
-    wingetId: 'Zoom.Zoom',
-    icon: 'SiZoom',
-    iconColor: '#2D8CFF',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
+  // Browsers
+  brave,
+  chrome,
+  chromium,
+  firefox,
+  opera,
+  vivaldi,
 
-  // ========================================
-  // MEDIA PLAYERS
-  // ========================================
-  {
-    id: 'aimp',
-    name: 'AIMP',
-    description: 'Powerful audio player',
-    category: 'media-players',
-    wingetId: 'AIMP.AIMP',
-    icon: 'SiAudiomack',
-    iconColor: '#FF6600',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'apple-music',
-    name: 'Apple Music',
-    description: 'Apple music streaming service',
-    category: 'media-players',
-    wingetId: 'Apple.AppleMusic',
-    icon: 'SiApplemusic',
-    iconColor: '#FA243C',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'deezer',
-    name: 'Deezer',
-    description: 'Music streaming service',
-    category: 'media-players',
-    wingetId: 'Deezer.Deezer',
-    icon: 'FaDeezer',
-    iconColor: '#FF0092',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'foobar2000',
-    name: 'foobar2000',
-    description: 'Advanced audio player',
-    category: 'media-players',
-    wingetId: 'PeterPawlowski.foobar2000',
-    icon: 'SiMusicbrainz',
-    iconColor: '#BA478F',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'itunes',
-    name: 'iTunes',
-    description: 'Apple\'s media player and library',
-    category: 'media-players',
-    wingetId: 'Apple.iTunes',
-    icon: 'SiApplemusic',
-    iconColor: '#FA243C',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'mpv',
-    name: 'mpv',
-    description: 'Minimalist media player',
-    category: 'media-players',
-    wingetId: 'mpv.net',
-    icon: 'FaPlay',
-    iconColor: '#FF8800',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'spotify',
-    name: 'Spotify',
-    description: 'Music streaming service',
-    category: 'media-players',
-    wingetId: 'Spotify.Spotify',
-    icon: 'SiSpotify',
-    iconColor: '#1DB954',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'tidal',
-    name: 'Tidal',
-    description: 'High-fidelity music streaming service',
-    category: 'media-players',
-    wingetId: 'TIDALMusicAS.TIDAL',
-    icon: 'SiTidal',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'vlc',
-    name: 'VLC Media Player',
-    description: 'Free, open-source multimedia player',
-    category: 'media-players',
-    wingetId: 'VideoLAN.VLC',
-    icon: 'SiVlcmediaplayer',
-    iconColor: '#FF8800',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'winamp',
-    name: 'Winamp',
-    description: 'Classic media player with visualizations',
-    category: 'media-players',
-    wingetId: 'Winamp.Winamp',
-    icon: 'WinampIcon',
-    iconColor: '#FF6600',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'youtube-music',
-    name: 'YouTube Music',
-    description: 'YouTube Music desktop app',
-    category: 'media-players',
-    wingetId: 'th-ch.YouTubeMusic',
-    icon: 'SiYoutubemusic',
-    iconColor: '#FF0000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
+  // Cloud Storage
+  box,
+  dropbox,
+  googleDrive,
+  icloud,
+  mega,
+  protonDrive,
 
-  // ========================================
-  // PRODUCTIVITY
-  // ========================================
-  {
-    id: 'acrobat-reader',
-    name: 'Adobe Acrobat Reader',
-    description: 'PDF viewer and editor',
-    category: 'productivity',
-    wingetId: 'Adobe.Acrobat.Reader.64-bit',
-    icon: 'SiAdobeacrobatreader',
-    iconColor: '#EC1C24',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'evernote',
-    name: 'Evernote',
-    description: 'Note-taking and organization',
-    category: 'productivity',
-    wingetId: 'Evernote.Evernote',
-    icon: 'SiEvernote',
-    iconColor: '#00A82D',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  // ========================================
-  // PRODUCTIVITY - PASSWORDS & CLOUD
-  // ========================================
-  {
-    id: 'lastpass',
-    name: 'LastPass',
-    description: 'Password manager',
-    category: 'security-privacy',
-    wingetId: 'LastPass.LastPass',
-    icon: 'SiLastpass',
-    iconColor: '#D32D27',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'libreoffice',
-    name: 'LibreOffice',
-    description: 'Free office suite (Word, Excel, PowerPoint alternative)',
-    category: 'productivity',
-    wingetId: 'TheDocumentFoundation.LibreOffice',
-    icon: 'SiLibreoffice',
-    iconColor: '#18A303',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'onenote',
-    name: 'Microsoft OneNote',
-    description: 'Digital note-taking app',
-    category: 'productivity',
-    wingetId: 'Microsoft.Office.OneNote',
-    icon: 'FaStickyNote',
-    iconColor: '#7719AA',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'notion',
-    name: 'Notion',
-    description: 'All-in-one workspace for notes and docs',
-    category: 'productivity',
-    wingetId: 'Notion.Notion',
-    icon: 'SiNotion',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'notion-calendar',
-    name: 'Notion Calendar',
-    description: 'Calendar integration for Notion',
-    category: 'productivity',
-    wingetId: 'Notion.NotionCalendar',
-    icon: 'SiNotion',
-    iconColor: '#000000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'obsidian',
-    name: 'Obsidian',
-    description: 'Powerful knowledge base on local Markdown',
-    category: 'productivity',
-    wingetId: 'Obsidian.Obsidian',
-    icon: 'SiObsidian',
-    iconColor: '#7C3AED',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'sumatra-pdf',
-    name: 'Sumatra PDF',
-    description: 'Lightweight PDF reader',
-    category: 'productivity',
-    wingetId: 'SumatraPDF.SumatraPDF',
-    icon: 'FaFilePdf',
-    iconColor: '#DC3545',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
+  // Communication
+  discord,
+  mailbird,
+  protonMailBridge,
+  signal,
+  slack,
+  teams,
+  telegram,
+  thunderbird,
+  whatsapp,
+  zoom,
 
-  // ========================================
-  // DEVELOPMENT TOOLS
-  // ========================================
-  {
-    id: 'android-studio',
-    name: 'Android Studio',
-    description: 'Official Android development IDE',
-    category: 'development',
-    wingetId: 'Google.AndroidStudio',
-    icon: 'SiAndroidstudio',
-    iconColor: '#3DDC84',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'cmder',
-    name: 'Cmder',
-    description: 'Portable console emulator for Windows',
-    category: 'development',
-    wingetId: 'Cmder.Cmder',
-    icon: 'FaTerminal',
-    iconColor: '#C9302C',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'dbeaver',
-    name: 'DBeaver Community',
-    description: 'Universal database tool',
-    category: 'development',
-    wingetId: 'dbeaver.dbeaver',
-    icon: 'SiDbeaver',
-    iconColor: '#382923',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'docker-desktop',
-    name: 'Docker Desktop',
-    description: 'Containerization platform',
-    category: 'development',
-    wingetId: 'Docker.DockerDesktop',
-    icon: 'SiDocker',
-    iconColor: '#2496ED',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'git',
-    name: 'Git',
-    description: 'Distributed version control system',
-    category: 'development',
-    wingetId: 'Git.Git',
-    icon: 'SiGit',
-    iconColor: '#F05032',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'github-desktop',
-    name: 'GitHub Desktop',
-    description: 'GUI for GitHub repositories',
-    category: 'development',
-    wingetId: 'GitHub.GitHubDesktop',
-    icon: 'SiGithub',
-    iconColor: '#181717',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'insomnia',
-    name: 'Insomnia',
-    description: 'API client and designer',
-    category: 'development',
-    wingetId: 'Insomnia.Insomnia',
-    icon: 'SiInsomnia',
-    iconColor: '#5849BE',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  // ========================================
-  // DEVELOPMENT - EXTENDED
-  // ========================================
-  {
-    id: 'intellij-community',
-    name: 'IntelliJ IDEA Community',
-    description: 'Free Java IDE by JetBrains',
-    category: 'development',
-    wingetId: 'JetBrains.IntelliJIDEA.Community',
-    icon: 'SiIntellijidea',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'jetbrains-toolbox',
-    name: 'JetBrains Toolbox',
-    description: 'Manage JetBrains IDEs',
-    category: 'development',
-    wingetId: 'JetBrains.Toolbox',
-    icon: 'SiJetbrains',
-    iconColor: '#000000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'paid',
-  },
-  {
-    id: 'neovim',
-    name: 'Neovim',
-    description: 'Hyperextensible Vim-based text editor',
-    category: 'development',
-    wingetId: 'Neovim.Neovim',
-    icon: 'SiNeovim',
-    iconColor: '#57A143',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'nodejs',
-    name: 'Node.js',
-    description: 'JavaScript runtime environment',
-    category: 'development',
-    wingetId: 'OpenJS.NodeJS',
-    icon: 'SiNodedotjs',
-    iconColor: '#339933',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'notepad-plusplus',
-    name: 'Notepad++',
-    description: 'Advanced text editor',
-    category: 'development',
-    wingetId: 'Notepad++.Notepad++',
-    icon: 'FaFileCode',
-    iconColor: '#90E04F',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'postman',
-    name: 'Postman',
-    description: 'API development and testing',
-    category: 'development',
-    wingetId: 'Postman.Postman',
-    icon: 'SiPostman',
-    iconColor: '#FF6C37',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'putty',
-    name: 'PuTTY',
-    description: 'Free SSH and telnet client',
-    category: 'development',
-    wingetId: 'PuTTY.PuTTY',
-    icon: 'FaTerminal',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'pycharm-community',
-    name: 'PyCharm Community',
-    description: 'Free Python IDE by JetBrains',
-    category: 'development',
-    wingetId: 'JetBrains.PyCharm.Community',
-    icon: 'SiPycharm',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'python',
-    name: 'Python 3.12',
-    description: 'High-level programming language',
-    category: 'development',
-    wingetId: 'Python.Python.3.12',
-    icon: 'SiPython',
-    iconColor: '#3776AB',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'sublime-text',
-    name: 'Sublime Text',
-    description: 'Sophisticated text editor',
-    category: 'development',
-    wingetId: 'SublimeHQ.SublimeText.4',
-    icon: 'SiSublimetext',
-    iconColor: '#FF9800',
-    popular: false,
-    requiresAdmin: true,
-    license: 'paid',
-  },
-  {
-    id: 'terminus',
-    name: 'Terminus',
-    description: 'Modern, highly customizable terminal',
-    category: 'development',
-    wingetId: 'Eugeny.Terminus',
-    icon: 'FaTerminal',
-    iconColor: '#00D9D5',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'vscode',
-    name: 'Visual Studio Code',
-    description: 'Powerful, extensible code editor',
-    category: 'development',
-    wingetId: 'Microsoft.VisualStudioCode',
-    icon: 'VscCode',
-    iconColor: '#007ACC',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'webstorm',
-    name: 'WebStorm',
-    description: 'Professional JavaScript/TypeScript IDE',
-    category: 'development',
-    wingetId: 'JetBrains.WebStorm',
-    icon: 'SiWebstorm',
-    iconColor: '#000000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'paid',
-  },
+  // Development
+  androidStudio,
+  cmder,
+  dbeaver,
+  dockerDesktop,
+  git,
+  githubDesktop,
+  insomnia,
+  intellijCommunity,
+  jetbrainsToolbox,
+  neovim,
+  nodejs,
+  notepadPlusplus,
+  postman,
+  putty,
+  pycharmCommunity,
+  python,
+  sublimeText,
+  terminus,
+  vscode,
+  webstorm,
 
-  // ========================================
-  // MEDIA CREATION
-  // ========================================
-  {
-    id: 'audacity',
-    name: 'Audacity',
-    description: 'Audio recording and editing',
-    category: 'media-creation',
-    wingetId: 'Audacity.Audacity',
-    icon: 'SiAudacity',
-    iconColor: '#0000CC',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'blender',
-    name: 'Blender',
-    description: '3D creation suite',
-    category: 'media-creation',
-    wingetId: 'BlenderFoundation.Blender',
-    icon: 'SiBlender',
-    iconColor: '#F5792A',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'gimp',
-    name: 'GIMP',
-    description: 'Free image editor',
-    category: 'media-creation',
-    wingetId: 'GIMP.GIMP',
-    icon: 'SiGimp',
-    iconColor: '#5C5543',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'handbrake',
-    name: 'HandBrake',
-    description: 'Video transcoder',
-    category: 'media-creation',
-    wingetId: 'HandBrake.HandBrake',
-    icon: 'FaFilm',
-    iconColor: '#3A3A3A',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'inkscape',
-    name: 'Inkscape',
-    description: 'Vector graphics editor',
-    category: 'media-creation',
-    wingetId: 'Inkscape.Inkscape',
-    icon: 'SiInkscape',
-    iconColor: '#000000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'kdenlive',
-    name: 'Kdenlive',
-    description: 'Open-source video editor',
-    category: 'media-creation',
-    wingetId: 'KDE.Kdenlive',
-    icon: 'SiKdenlive',
-    iconColor: '#527EB2',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'obs-studio',
-    name: 'OBS Studio',
-    description: 'Video recording and live streaming',
-    category: 'media-creation',
-    wingetId: 'OBSProject.OBSStudio',
-    icon: 'SiObsstudio',
-    iconColor: '#302E31',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
+  // Drivers
+  amdAdrenalin,
+  driverBooster,
+  driverEasy,
+  nvidiaGeforceExperience,
+  snappyDriver,
 
-  // ========================================
-  // GAMING
-  // ========================================
-  {
-    id: 'battlenet',
-    name: 'Battle.net',
-    description: 'Blizzard game launcher',
-    category: 'gaming',
-    wingetId: 'Blizzard.BattleNet',
-    icon: 'SiBattledotnet',
-    iconColor: '#148EFF',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'ea-app',
-    name: 'EA App',
-    description: 'Electronic Arts game launcher',
-    category: 'gaming',
-    wingetId: 'ElectronicArts.EADesktop',
-    icon: 'SiEa',
-    iconColor: '#000000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'epic-games',
-    name: 'Epic Games Launcher',
-    description: 'Epic Games store and launcher',
-    category: 'gaming',
-    wingetId: 'EpicGames.EpicGamesLauncher',
-    icon: 'SiEpicgames',
-    iconColor: '#313131',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'gog-galaxy',
-    name: 'GOG Galaxy',
-    description: 'GOG games launcher',
-    category: 'gaming',
-    wingetId: 'GOG.Galaxy',
-    icon: 'SiGogdotcom',
-    iconColor: '#86328A',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'hydra-launcher',
-    name: 'Hydra Launcher',
-    description: 'Game launcher and library manager',
-    category: 'gaming',
-    wingetId: 'Hydra.Hydra',
-    icon: 'FaGamepad',
-    iconColor: '#7C3AED',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  // ========================================
-  // GAMING - EMULATION
-  // ========================================
-  {
-    id: 'retroarch',
-    name: 'RetroArch',
-    description: 'All-in-one emulator frontend',
-    category: 'gaming',
-    wingetId: 'Libretro.RetroArch',
-    icon: 'SiRetroarch',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  // ========================================
-  // GAMING LAUNCHERS - ADDITIONAL
-  // ========================================
-  {
-    id: 'riot-client',
-    name: 'Riot Client',
-    description: 'Launcher for Riot Games (Valorant, LoL)',
-    category: 'gaming',
-    wingetId: 'RiotGames.Riot.Client',
-    icon: 'SiRiotgames',
-    iconColor: '#D32936',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'steam',
-    name: 'Steam',
-    description: 'PC gaming platform',
-    category: 'gaming',
-    wingetId: 'Valve.Steam',
-    icon: 'SiSteam',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'ubisoft-connect',
-    name: 'Ubisoft Connect',
-    description: 'Ubisoft game launcher',
-    category: 'gaming',
-    wingetId: 'Ubisoft.Connect',
-    icon: 'SiUbisoft',
-    iconColor: '#0080FF',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
+  // Gaming
+  battlenet,
+  eaApp,
+  epicGames,
+  gogGalaxy,
+  hydraLauncher,
+  retroarch,
+  riotClient,
+  steam,
+  ubisoftConnect,
 
-  // ========================================
-  // SECURITY & PRIVACY
-  // ========================================
-  {
-    id: '1password',
-    name: '1Password',
-    description: 'Password manager and digital vault',
-    category: 'security',
-    wingetId: 'AgileBits.1Password',
-    icon: 'Si1Password',
-    iconColor: '#0094F5',
-    popular: true,
-    requiresAdmin: true,
-    license: 'freemium',
-  },
-  // ========================================
-  // SECURITY & PRIVACY
-  // ========================================
-  {
-    id: 'bitwarden',
-    name: 'Bitwarden',
-    description: 'Open-source password manager',
-    category: 'security',
-    wingetId: 'Bitwarden.Bitwarden',
-    icon: 'SiBitwarden',
-    iconColor: '#175DDC',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'keepassxc',
-    name: 'KeePassXC',
-    description: 'Free, open-source password manager',
-    category: 'security',
-    wingetId: 'KeePassXCTeam.KeePassXC',
-    icon: 'SiKeepassxc',
-    iconColor: '#6CAC4D',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'malwarebytes',
-    name: 'Malwarebytes',
-    description: 'Anti-malware protection',
-    category: 'security',
-    wingetId: 'Malwarebytes.Malwarebytes',
-    icon: 'SiMalwarebytes',
-    iconColor: '#FF6633',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'nordvpn',
-    name: 'NordVPN',
-    description: 'VPN service for privacy',
-    category: 'security',
-    wingetId: 'NordVPN.NordVPN',
-    icon: 'SiNordvpn',
-    iconColor: '#4687FF',
-    popular: true,
-    requiresAdmin: true,
-    license: 'freemium',
-  },
-  {
-    id: 'protonvpn',
-    name: 'Proton VPN',
-    description: 'Privacy-focused VPN',
-    category: 'security',
-    wingetId: 'Proton.ProtonVPN',
-    icon: 'SiProtonvpn',
-    iconColor: '#56B366',
-    popular: true,
-    requiresAdmin: true,
-    license: 'freemium',
-  },
+  // Media Creation
+  audacity,
+  blender,
+  gimp,
+  handbrake,
+  inkscape,
+  kdenlive,
+  obsStudio,
 
-  // ========================================
-  // ANTIVIRUS & SECURITY
-  // ========================================
-  {
-    id: 'avast',
-    name: 'Avast Free Antivirus',
-    description: 'Free antivirus protection',
-    category: 'antivirus',
-    wingetId: 'Avast.Avast',
-    icon: 'SiAvast',
-    iconColor: '#FF7A00',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'avg',
-    name: 'AVG Antivirus Free',
-    description: 'Free antivirus protection',
-    category: 'antivirus',
-    wingetId: 'AVG.AntiVirusFree',
-    icon: 'SiAvg',
-    iconColor: '#FF8800',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'bitdefender',
-    name: 'Bitdefender Free',
-    description: 'Award-winning free antivirus',
-    category: 'antivirus',
-    wingetId: 'Bitdefender.Bitdefender',
-    icon: 'FaShieldAlt',
-    iconColor: '#ED1C24',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  // ========================================
-  // ANTIVIRUS & SECURITY
-  // ========================================
-  {
-    id: 'clamwin',
-    name: 'ClamWin',
-    description: 'Free antivirus for Windows',
-    category: 'antivirus',
-    wingetId: 'ClamWin.ClamWin',
-    icon: 'FaShieldVirus',
-    iconColor: '#DC3545',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  // ========================================
-  // SECURITY - ANTIVIRUS
-  // ========================================
-  {
-    id: 'kaspersky',
-    name: 'Kaspersky Standard',
-    description: 'Antivirus and security suite',
-    category: 'antivirus',
-    wingetId: 'Kaspersky.KasperskyStandard',
-    icon: 'SiKaspersky',
-    iconColor: '#006D5C',
-    popular: true,
-    requiresAdmin: true,
-    license: 'paid',
-  },
+  // Media Players
+  aimp,
+  appleMusic,
+  deezer,
+  foobar2000,
+  itunes,
+  mpv,
+  spotify,
+  tidal,
+  vlc,
+  winamp,
+  youtubeMusic,
 
-  // ========================================
-  // CLOUD STORAGE
-  // ========================================
-  {
-    id: 'box',
-    name: 'Box',
-    description: 'Cloud content management',
-    category: 'cloud-storage',
-    wingetId: 'Box.Box',
-    icon: 'SiBox',
-    iconColor: '#0061D5',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'dropbox',
-    name: 'Dropbox',
-    description: 'File hosting service',
-    category: 'cloud-storage',
-    wingetId: 'Dropbox.Dropbox',
-    icon: 'SiDropbox',
-    iconColor: '#0061FF',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  // ========================================
-  // CLOUD STORAGE
-  // ========================================
-  {
-    id: 'google-drive',
-    name: 'Google Drive',
-    description: 'Cloud storage and file sync',
-    category: 'cloud-storage',
-    wingetId: 'Google.GoogleDrive',
-    icon: 'GoogleDriveIcon',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'icloud',
-    name: 'iCloud for Windows',
-    description: 'Apple iCloud sync client',
-    category: 'cloud-storage',
-    wingetId: 'Apple.iCloud',
-    icon: 'SiIcloud',
-    iconColor: '#3693F3',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'mega',
-    name: 'MEGA',
-    description: 'Secure cloud storage',
-    category: 'cloud-storage',
-    wingetId: 'Mega.MEGASync',
-    icon: 'SiMega',
-    iconColor: '#D9272E',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'proton-drive',
-    name: 'Proton Drive',
-    description: 'Encrypted cloud storage',
-    category: 'cloud-storage',
-    wingetId: 'Proton.ProtonDrive',
-    icon: 'SiProtondrive',
-    iconColor: '#6D4AFF',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
+  // Productivity
+  acrobatReader,
+  evernote,
+  libreoffice,
+  notion,
+  notionCalendar,
+  obsidian,
+  onenote,
+  sumatraPdf,
 
-  // ========================================
-  // UTILITIES
-  // ========================================
-  // ========================================
-  // UTILITIES
-  // ========================================
-  {
-    id: '7zip',
-    name: '7-Zip',
-    description: 'File archiver with high compression',
-    category: 'utilities',
-    wingetId: '7zip.7zip',
-    icon: 'FaFileArchive',
-    iconColor: '#00A2E8',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'bleachbit',
-    name: 'BleachBit',
-    description: 'System cleaner and privacy tool',
-    category: 'utilities',
-    wingetId: 'BleachBit.BleachBit',
-    icon: 'BleachBitIcon',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  // ========================================
-  // UTILITIES - SYSTEM MAINTENANCE
-  // ========================================
-  {
-    id: 'ccleaner',
-    name: 'CCleaner',
-    description: 'System cleaner and optimizer',
-    category: 'utilities',
-    wingetId: 'Piriform.CCleaner',
-    icon: 'CCleanerIcon',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'cpu-z',
-    name: 'CPU-Z',
-    description: 'System information utility',
-    category: 'utilities',
-    wingetId: 'CPUID.CPU-Z',
-    icon: 'CpuZIcon',
-    iconColor: '#4A90E2',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'everything',
-    name: 'Everything',
-    description: 'Fast file search utility',
-    category: 'utilities',
-    wingetId: 'voidtools.Everything',
-    icon: 'FaSearch',
-    iconColor: '#0078D7',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'emule',
-    name: 'eMule',
-    description: 'Peer-to-peer file sharing client',
-    category: 'utilities',
-    wingetId: 'eMule.eMule',
-    icon: 'EMuleIcon',
-    iconColor: '#0057B7',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'gpu-z',
-    name: 'GPU-Z',
-    description: 'Graphics card information',
-    category: 'utilities',
-    wingetId: 'TechPowerUp.GPU-Z',
-    icon: 'GpuZIcon',
-    iconColor: '#5a9a5a',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'hwmonitor',
-    name: 'HWMonitor',
-    description: 'Hardware monitoring tool',
-    category: 'utilities',
-    wingetId: 'CPUID.HWMonitor',
-    icon: 'FaThermometerHalf',
-    iconColor: '#0078D7',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'nero',
-    name: 'Nero Burning ROM',
-    description: 'CD/DVD/Blu-ray burning software',
-    category: 'utilities',
-    wingetId: 'Nero.NeroCore',
-    icon: 'NeroIcon',
-    iconColor: '#FF0000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'paid',
-  },
-  {
-    id: 'powertoys',
-    name: 'PowerToys',
-    description: 'Microsoft utilities for power users',
-    category: 'utilities',
-    wingetId: 'Microsoft.PowerToys',
-    icon: 'FaTools',
-    iconColor: '#0078D7',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'poweriso',
-    name: 'PowerISO',
-    description: 'ISO image file utility and disc burner',
-    category: 'utilities',
-    wingetId: 'PowerSoftware.PowerISO',
-    icon: 'PowerISOIcon',
-    iconColor: '#0078D7',
-    popular: false,
-    requiresAdmin: true,
-    license: 'freemium',
-  },
-  {
-    id: 'qbittorrent',
-    name: 'qBittorrent',
-    description: 'Free BitTorrent client',
-    category: 'utilities',
-    wingetId: 'qBittorrent.qBittorrent',
-    icon: 'SiQbittorrent',
-    iconColor: '#1E88E5',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'rainmeter',
-    name: 'Rainmeter',
-    description: 'Desktop customization tool',
-    category: 'utilities',
-    wingetId: 'Rainmeter.Rainmeter',
-    icon: 'SiRainmeter',
-    iconColor: '#19B2E2',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  // ========================================
-  // UTILITIES - SYSTEM
-  // ========================================
-  {
-    id: 'revo-uninstaller',
-    name: 'Revo Uninstaller',
-    description: 'Advanced program uninstaller',
-    category: 'utilities',
-    wingetId: 'RevoUninstaller.RevoUninstaller',
-    icon: 'RevoUninstallerIcon',
-    iconColor: '#D32F2F',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'sharex',
-    name: 'ShareX',
-    description: 'Screen capture and file sharing',
-    category: 'utilities',
-    wingetId: 'ShareX.ShareX',
-    icon: 'SiSharex',
-    iconColor: '#3D94F6',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'ultraiso',
-    name: 'UltraISO',
-    description: 'Premium ISO file editor and converter',
-    category: 'utilities',
-    wingetId: 'EZBSystems.UltraISO',
-    icon: 'UltraISOIcon',
-    iconColor: '#FFB900',
-    popular: false,
-    requiresAdmin: true,
-    license: 'paid',
-  },
-  {
-    id: 'winrar',
-    name: 'WinRAR',
-    description: 'Archive manager',
-    category: 'utilities',
-    wingetId: 'RARLab.WinRAR',
-    icon: 'WinRarIcon',
-    iconColor: '#D90015',
-    popular: false,
-    requiresAdmin: true,
-    license: 'paid',
-  },
+  // Runtimes
+  adobeAir,
+  directx,
+  dotnetDesktop8,
+  dotnetFramework,
+  dotnetRuntime6,
+  javaJdk21,
+  javaRuntime,
+  openal,
+  openjdk21,
+  vcredistAll,
+  vulkan,
 
-  // ========================================
-  // DRIVERS
-  // ========================================
-  {
-    id: 'amd-adrenalin',
-    name: 'AMD Adrenalin',
-    description: 'AMD GPU drivers and software',
-    category: 'drivers',
-    wingetId: 'Advanced.Micro.Devices.Radeon-Adrenalin-Edition',
-    icon: 'SiAmd',
-    iconColor: '#ED1C24',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'driver-booster',
-    name: 'Driver Booster',
-    description: 'Automatic driver updater',
-    category: 'drivers',
-    wingetId: 'IObit.DriverBooster',
-    icon: 'DriverBoosterIcon',
-    iconColor: '#00A4EF',
-    popular: true,
-    requiresAdmin: true,
-    license: 'freemium',
-  },
-  {
-    id: 'driver-easy',
-    name: 'Driver Easy',
-    description: 'Driver update utility',
-    category: 'drivers',
-    wingetId: 'Easeware.DriverEasy',
-    icon: 'FaWrench',
-    iconColor: '#4CAF50',
-    popular: false,
-    requiresAdmin: true,
-    license: 'freemium',
-  },
-  // ========================================
-  // DRIVERS
-  // ========================================
-  {
-    id: 'nvidia-geforce-experience',
-    name: 'NVIDIA GeForce Experience',
-    description: 'Nvidia GPU drivers and optimization',
-    category: 'drivers',
-    wingetId: 'Nvidia.GeForceExperience',
-    icon: 'SiNvidia',
-    iconColor: '#76B900',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'snappy-driver',
-    name: 'Snappy Driver Installer',
-    description: 'Open-source driver installer',
-    category: 'drivers',
-    wingetId: 'GlennDelahoy.SnappyDriverInstallerOrigin',
-    icon: 'FaCompactDisc',
-    iconColor: '#00A8E8',
-    popular: false,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
+  // Security
+  onepassword,
+  bitwarden,
+  keepassxc,
+  lastpass,
+  malwarebytes,
+  nordvpn,
+  protonvpn,
 
-  // ========================================
-  // RUNTIMES & LIBRARIES
-  // ========================================
-  // ========================================
-  // RUNTIMES & LIBRARIES
-  // ========================================
-  {
-    id: 'dotnet-desktop-8',
-    name: '.NET Desktop Runtime 8',
-    description: 'Required for .NET applications',
-    category: 'runtimes',
-    wingetId: 'Microsoft.DotNet.DesktopRuntime.8',
-    icon: 'SiDotnet',
-    iconColor: '#512BD4',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'dotnet-framework',
-    name: '.NET Framework 4.8',
-    description: 'Microsoft .NET Framework runtime',
-    category: 'runtimes',
-    wingetId: 'Microsoft.DotNet.Framework.DeveloperPack_4',
-    icon: 'SiDotnet',
-    iconColor: '#512BD4',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'dotnet-runtime-6',
-    name: '.NET Runtime 6',
-    description: '.NET 6 Runtime',
-    category: 'runtimes',
-    wingetId: 'Microsoft.DotNet.Runtime.6',
-    icon: 'SiDotnet',
-    iconColor: '#512BD4',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'adobe-air',
-    name: 'Adobe AIR',
-    description: 'Adobe AIR runtime for desktop apps',
-    category: 'runtimes',
-    wingetId: 'Adobe.AIR',
-    icon: 'SiAdobe',
-    iconColor: '#FF0000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'directx',
-    name: 'DirectX End-User Runtime',
-    description: 'Graphics and game runtime',
-    category: 'runtimes',
-    wingetId: 'Microsoft.DirectX',
-    icon: 'DirectXIcon',
-    iconColor: '#107C10',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'java-runtime',
-    name: 'Java Runtime Environment',
-    description: 'Java SE Runtime (JRE)',
-    category: 'runtimes',
-    wingetId: 'Oracle.JavaRuntimeEnvironment',
-    icon: 'SiOracle',
-    iconColor: '#F80000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'openal',
-    name: 'OpenAL',
-    description: 'Cross-platform 3D audio API',
-    category: 'runtimes',
-    wingetId: 'OpenAL.OpenAL',
-    icon: 'FaVolumeUp',
-    iconColor: '#000000',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'openjdk-21',
-    name: 'OpenJDK 21',
-    description: 'Open-source Java Development Kit',
-    category: 'runtimes',
-    wingetId: 'Microsoft.OpenJDK.21',
-    icon: 'SiOpenjdk',
-    iconColor: '#437291',
-    popular: true,
-    requiresAdmin: true,
-    license: 'open-source',
-  },
-  {
-    id: 'java-jdk-21',
-    name: 'Oracle JDK 21',
-    description: 'Java Development Kit',
-    category: 'runtimes',
-    wingetId: 'Oracle.JDK.21',
-    icon: 'SiOracle',
-    iconColor: '#F80000',
-    popular: false,
-    requiresAdmin: true,
-    license: 'paid',
-  },
-  // ========================================
-  // RUNTIMES - ESSENTIAL (ALL RECOMMENDED)
-  // ========================================
-  {
-    id: 'vcredist-all',
-    name: 'Visual C++ Redistributables (All)',
-    description: 'Microsoft Visual C++ 2005-2022 (x86 + x64)',
-    category: 'runtimes',
-    wingetId: 'Microsoft.VCRedist.2015+.x64',
-    icon: 'SiCplusplus',
-    iconColor: '#00599C',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-  {
-    id: 'vulkan',
-    name: 'Vulkan Runtime',
-    description: 'Vulkan graphics API runtime',
-    category: 'runtimes',
-    wingetId: 'KhronosGroup.VulkanSDK',
-    icon: 'SiVulkan',
-    iconColor: '#AC162C',
-    popular: true,
-    requiresAdmin: true,
-    license: 'free',
-  },
-
+  // Utilities
+  sevenzip,
+  bleachbit,
+  ccleaner,
+  cpuZ,
+  emule,
+  everything,
+  gpuZ,
+  hwmonitor,
+  nero,
+  poweriso,
+  powertoys,
+  qbittorrent,
+  rainmeter,
+  revoUninstaller,
+  sharex,
+  ultraiso,
+  winrar,
 ];
 
 /**
