@@ -12,6 +12,10 @@ If you find this tool useful, consider sponsoring to help keep it alive and acti
   <img src="https://img.shields.io/badge/Sponsor-♥-ea4aaa?style=for-the-badge&logo=github-sponsors" alt="Sponsor kaic" />
 </a>
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for the full history of changes to this project.
+
 ## How to Use (Production)
 
 Just open the live version:
@@ -162,7 +166,6 @@ win-post-install/
 ## Documentation
 
 - [Contributing Guide](CONTRIBUTING.md)
-- [Changelog](CHANGELOG.md)
 
 ## Contributing
 
