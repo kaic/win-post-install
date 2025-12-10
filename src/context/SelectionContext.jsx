@@ -5,24 +5,27 @@ import { STORAGE_KEYS } from '../constants';
 
 const SelectionContext = createContext();
 
-export const SelectionProvider = ({ children }) => {
-  // State
-  const [selectedSoftware, setSelectedSoftware] = useState([]);
-  const [selectedConfigs, setSelectedConfigs] = useState([]);
-
-  // Load from localStorage on mount
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEYS.selections);
-      if (saved) {
-        const data = JSON.parse(saved);
-        setSelectedSoftware(data.software || []);
-        setSelectedConfigs(data.configs || []);
-      }
-    } catch (error) {
-      console.error('Error loading selections from localStorage:', error);
+// Load initial state from localStorage
+const loadInitialSelections = () => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEYS.selections);
+    if (saved) {
+      const data = JSON.parse(saved);
+      return {
+        software: data.software || [],
+        configs: data.configs || [],
+      };
     }
-  }, []);
+  } catch (error) {
+    console.error('Error loading selections from localStorage:', error);
+  }
+  return { software: [], configs: [] };
+};
+
+export function SelectionProvider({ children }) {
+  // State with lazy initialization
+  const [selectedSoftware, setSelectedSoftware] = useState(() => loadInitialSelections().software);
+  const [selectedConfigs, setSelectedConfigs] = useState(() => loadInitialSelections().configs);
 
   // Save to localStorage on change
   useEffect(() => {
@@ -118,13 +121,16 @@ export const SelectionProvider = ({ children }) => {
       {children}
     </SelectionContext.Provider>
   );
-};
+}
+
+SelectionProvider.displayName = 'SelectionProvider';
 
 // Custom hook to use the selection context
-export const useSelection = () => {
+// eslint-disable-next-line react-refresh/only-export-components
+export function useSelection() {
   const context = useContext(SelectionContext);
   if (!context) {
     throw new Error('useSelection must be used within SelectionProvider');
   }
   return context;
-};
+}

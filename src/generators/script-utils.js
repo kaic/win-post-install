@@ -1,5 +1,5 @@
-import { softwareCatalog, getSoftwareById } from '../data/software-catalog';
-import { configurations, getConfigById } from '../data/configurations';
+import { getSoftwareById } from '../data/software-catalog';
+import { getConfigById } from '../data/configurations';
 import { categories } from '../data/categories';
 
 /**
