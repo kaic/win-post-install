@@ -608,3 +608,68 @@ input:focus-visible {
 .skip-link:focus {
   top: 0;
 }
+
+/* ================================================== */
+/* DARK MODE - WIN95 AESTHETIC                        */
+/* ================================================== */
+
+.dark {
+  /* Dark Win95 Flat Color Palette */
+  --win95-white: #1a1a1a;
+  --win95-light-gray: #2d2d2d;
+  --win95-medium-gray: #3d3d3d;
+  --win95-dark-gray: #a0a0a0;
+  --win95-black: #e0e0e0;
+
+  /* Accent Colors - Adjusted for dark mode contrast */
+  --win95-blue: #4040c0;
+  --win95-green: #00cc00;
+  --win95-red: #ff4444;
+  --win95-yellow: #ffdd00;
+
+  /* Legacy XP/Win98 variables - dark mode */
+  --xp-window-bg: #2d2d2d;
+  --xp-text-black: #e0e0e0;
+  --xp-text-white: #1a1a1a;
+  --win98-gray-light: #2d2d2d;
+  --win98-gray-medium: #505050;
+  --win98-gray-dark: #a0a0a0;
+  --win98-blue-dark: #4040c0;
+  --win98-black: #e0e0e0;
+  --win98-white: #1a1a1a;
+}
+
+/* Dark mode body background */
+.dark body,
+body.dark {
+  background-color: #1a1a1a;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background-color: #2d2d2d;
+  border-color: #505050;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #505050;
+  border-color: #606060;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #606060;
+}
+
+.dark ::-webkit-scrollbar-button {
+  background-color: #3d3d3d;
+  border-color: #505050;
+}
+
+/* Dark mode scrollbar arrows */
+.dark ::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M4 2L1 6h6z' fill='%23e0e0e0'/%3E%3C/svg%3E");
+}
+
+.dark ::-webkit-scrollbar-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M4 6L1 2h6z' fill='%23e0e0e0'/%3E%3C/svg%3E");
+}
