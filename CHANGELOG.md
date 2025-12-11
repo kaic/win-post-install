@@ -11,6 +11,10 @@ This changelog is automatically generated from git commits.
 
 ### 2025-12-10
 
+- ci: use PAT token for changelog workflow to bypass branch protection ([@Kaic Bento](https://github.com/kaic))
+- chore: test changelog workflow after branch protection update ([@Kaic Bento](https://github.com/kaic))
+- chore: trigger changelog update ([@Kaic Bento](https://github.com/kaic))
+- fix: resolve catalog validation errors and eslint issues ([#13](https://github.com/kaic/win-post-install/pull/13)) ([@Kaic](https://github.com/kaic))
 - ci: add test job to pipeline ([@Kaic Bento](https://github.com/kaic))
 - test: add Jest and catalog validation tests ([@Kaic Bento](https://github.com/kaic))
 - fix: use gh CLI to get author username for changelog ([@Kaic Bento](https://github.com/kaic))
