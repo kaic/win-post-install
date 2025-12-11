@@ -9,6 +9,10 @@ This changelog is automatically generated from git commits.
 <!-- CHANGELOG_START -->
 
 
+### 2025-12-11
+
+- Update config-request.yml ([#14](https://github.com/kaic/win-post-install/pull/14)) ([@Kaic](https://github.com/kaic))
+
 ### 2025-12-10
 
 - ci: use PAT token for changelog workflow to bypass branch protection ([@Kaic Bento](https://github.com/kaic))
