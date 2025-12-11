@@ -1,7 +1,7 @@
 name: Software Request
 description: Request a new software to be added to the catalog
 title: "[Software]: "
-labels: ["catalog", "enhancement"]
+labels: ["catalog", "new-software", "enhancement"]
 body:
   - type: markdown
     attributes:
