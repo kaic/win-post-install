@@ -1,7 +1,7 @@
 name: Configuration Request
 description: Request a new Windows configuration/tweak to be added
 title: "[Config]: "
-labels: ["config", "enhancement"]
+labels: ["new-config", "enhancement", ]
 body:
   - type: markdown
     attributes:
