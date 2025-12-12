@@ -54,6 +54,7 @@ import notepadPlusplus from './software/development/notepad-plusplus.js';
 import postman from './software/development/postman.js';
 import putty from './software/development/putty.js';
 import pycharmCommunity from './software/development/pycharm-community.js';
+import phpstorm from './software/development/phpstorm.js';
 import python from './software/development/python.js';
 import sublimeText from './software/development/sublime-text.js';
 import terminus from './software/development/terminus.js';
@@ -203,6 +204,7 @@ export const softwareCatalog = [
   postman,
   putty,
   pycharmCommunity,
+  phpstorm,
   python,
   sublimeText,
   terminus,
