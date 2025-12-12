@@ -59,6 +59,7 @@ import sublimeText from './software/development/sublime-text.js';
 import terminus from './software/development/terminus.js';
 import vscode from './software/development/vscode.js';
 import webstorm from './software/development/webstorm.js';
+import zed from './software/development/zed.js';
 
 // Drivers
 import amdAdrenalin from './software/drivers/amd-adrenalin.js';
@@ -208,6 +209,7 @@ export const softwareCatalog = [
   terminus,
   vscode,
   webstorm,
+  zed,
 
   // Drivers
   amdAdrenalin,
