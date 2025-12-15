@@ -12,6 +12,7 @@
   --win95-medium-gray: #C0C0C0;
   --win95-dark-gray: #7A7A7A;
   --win95-black: #000000;
+  --win95-text-inverse: #FFFFFF;
 
   /* Accent Colors - Flat */
   --win95-blue: #000080;
@@ -74,7 +75,7 @@ body {
 .xp-title-bar {
   height: 20px;
   background-color: var(--win95-blue); /* FLAT COLOR - NO GRADIENT */
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   font-weight: bold;
   font-size: var(--win95-font-size);
   padding: 2px 4px;
@@ -179,14 +180,14 @@ body {
 .win95-button:hover:not(:disabled),
 .xp-button:hover:not(:disabled) {
   background-color: var(--win95-dark-gray);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   border-color: var(--win95-black);
 }
 
 .win95-button:active:not(:disabled),
 .xp-button:active:not(:disabled) {
   background-color: var(--win95-dark-gray);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   transform: translateY(1px); /* PRESSED OFFSET */
 }
 
@@ -204,7 +205,7 @@ body {
 .win95-button-primary,
 .xp-button-primary {
   background-color: var(--win95-blue); /* FLAT BLUE */
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   font-weight: bold;
   border-color: var(--win95-black);
 }
@@ -227,7 +228,7 @@ body {
 .win95-button-danger,
 .xp-button-danger {
   background-color: var(--win95-red); /* FLAT RED */
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   font-weight: bold;
   border-color: var(--win95-black);
 }
@@ -340,7 +341,7 @@ body {
 .win95-selected,
 .xp-selected {
   background-color: var(--win95-blue); /* FLAT BLUE */
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   border-color: var(--win95-black);
 }
 
@@ -366,7 +367,7 @@ body {
 .win95-menu-item:hover,
 .xp-menu-item:hover {
   background-color: var(--win95-blue);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
 }
 
 /* ================================================== */
@@ -422,7 +423,7 @@ body {
 /* ================================================== */
 
 .win95-text-black { color: var(--win95-black); }
-.win95-text-white { color: var(--win95-white); }
+.win95-text-white { color: var(--win95-text-inverse); }
 .win95-text-gray { color: var(--win95-dark-gray); }
 .win95-bg-window { background-color: var(--win95-light-gray); }
 .win95-bg-white { background-color: var(--win95-white); }
@@ -431,7 +432,7 @@ body {
 
 /* Legacy XP utility classes - mapped to Win95 */
 .xp-text-black { color: var(--win95-black); }
-.xp-text-white { color: var(--win95-white); }
+.xp-text-white { color: var(--win95-text-inverse); }
 .xp-text-gray { color: var(--win95-dark-gray); }
 .xp-bg-window { background-color: var(--win95-light-gray); }
 .xp-bg-white { background-color: var(--win95-white); }
@@ -484,19 +485,19 @@ body {
 
 .win98-button:hover:not(:disabled) {
   background-color: var(--win95-dark-gray);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   border-color: var(--win95-black);
 }
 
 .win98-button:active:not(:disabled) {
   background-color: var(--win95-dark-gray);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   transform: translateY(1px);
 }
 
 .win98-button-primary {
   background-color: var(--win95-blue);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   font-weight: bold;
   border-color: var(--win95-black);
 }
@@ -507,7 +508,7 @@ body {
 
 .win98-button-danger {
   background-color: var(--win95-red);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   font-weight: bold;
   border-color: var(--win95-black);
 }
@@ -554,7 +555,7 @@ body {
 
 .win98-selected {
   background-color: var(--win95-blue);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   border-color: var(--win95-black);
 }
 
@@ -599,7 +600,7 @@ input:focus-visible {
   top: -40px;
   left: 0;
   background: var(--win95-blue);
-  color: var(--win95-white);
+  color: var(--win95-text-inverse);
   padding: 8px;
   text-decoration: none;
   z-index: 100;
@@ -620,6 +621,7 @@ input:focus-visible {
   --win95-medium-gray: #3d3d3d;
   --win95-dark-gray: #a0a0a0;
   --win95-black: #e0e0e0;
+  --win95-text-inverse: #ffffff;
 
   /* Accent Colors - Adjusted for dark mode contrast */
   --win95-blue: #4040c0;
@@ -637,6 +639,11 @@ input:focus-visible {
   --win98-blue-dark: #4040c0;
   --win98-black: #e0e0e0;
   --win98-white: #1a1a1a;
+}
+
+/* Subtle icon outline for dark mode visibility */
+.dark .software-icon svg {
+  filter: drop-shadow(0 0 0.75px rgba(255, 255, 255, 0.6));
 }
 
 /* Dark mode body background */

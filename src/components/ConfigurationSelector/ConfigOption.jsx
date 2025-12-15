@@ -38,7 +38,7 @@ const ConfigOption = memo(({ config }) => {
             <h4
               className="text-[11px] font-bold"
               style={{
-                color: isSelected ? 'var(--win98-white)' : 'var(--win98-black)'
+                color: isSelected ? 'var(--win95-text-inverse)' : 'var(--win98-black)'
               }}
             >
               {config.name}

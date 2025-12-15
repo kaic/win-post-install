@@ -5,10 +5,12 @@ const SoftwareIcon = ({ iconName, color, size = 24 }) => {
   const Icon = Icons[iconName] || Icons.FiPackage;
 
   return (
-    <Icon
-      size={size}
-      style={{ color: color || '#6B7280', flexShrink: 0 }}
-    />
+    <span className="software-icon" style={{ display: 'inline-flex', flexShrink: 0 }}>
+      <Icon
+        size={size}
+        style={{ color: color || '#6B7280' }}
+      />
+    </span>
   );
 };
 

@@ -4,7 +4,7 @@
 const Badge = ({ color, textColor = 'white', children }) => {
   return (
     <span
-      className="px-1 text-[10px] border border-black"
+      className="inline-flex items-center px-1.5 py-0.5 text-[10px] leading-none border border-black"
       style={{
         backgroundColor: color,
         color: textColor,

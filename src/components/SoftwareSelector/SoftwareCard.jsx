@@ -41,7 +41,7 @@ const SoftwareCard = memo(({ software }) => {
               <div
                 className="flex items-center gap-1.5 flex-wrap text-[11px] font-bold"
                 style={{
-                  color: isSelected ? 'var(--win98-white)' : 'var(--win98-black)'
+                  color: isSelected ? 'var(--win95-text-inverse)' : 'var(--win98-black)'
                 }}
               >
                 <span>{software.name}</span>

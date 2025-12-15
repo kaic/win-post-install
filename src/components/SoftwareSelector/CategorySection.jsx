@@ -27,7 +27,7 @@ const CategorySection = ({ category, software }) => {
             <div style={{ fontSize: '13px', fontWeight: 'bold', marginBottom: '3px', lineHeight: '1.2' }}>
               {category.name}
             </div>
-            <div className="category-description" style={{ fontSize: '11px', fontWeight: 'normal', color: '#000', lineHeight: '1.3' }}>
+            <div className="category-description" style={{ fontSize: '11px', fontWeight: 'normal', color: 'var(--win95-black)', lineHeight: '1.3' }}>
               {category.description}
             </div>
           </div>
