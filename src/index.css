@@ -699,3 +699,11 @@ body.dark {
 .win-dialog {
   max-width: calc(100vw - 32px);
 }
+
+/* Match button sizing inside dialogs */
+.win-dialog .win98-button {
+  height: auto;
+  min-height: 32px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
