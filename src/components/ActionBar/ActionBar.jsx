@@ -1,23 +1,24 @@
 import { useSelection } from '../../context/SelectionContext';
 import { useScriptGenerator } from '../../hooks/useScriptGenerator';
+import { useState } from 'react';
+import WinDialog from '../Common/WinDialog';
 
 const ActionBar = () => {
   const { selectedSoftware, selectedConfigs, clearAll } = useSelection();
   const { downloadScript } = useScriptGenerator();
+  const [showClearDialog, setShowClearDialog] = useState(false);
+  const [showDownloadDialog, setShowDownloadDialog] = useState(false);
 
   const totalSelected = selectedSoftware.length + selectedConfigs.length;
 
   const handleDownload = () => {
-    downloadScript();
+    if (totalSelected === 0) return;
+    setShowDownloadDialog(true);
   };
 
   const handleClear = () => {
-    if (
-      totalSelected > 0 &&
-      confirm(`Clear all ${totalSelected} selections?`)
-    ) {
-      clearAll();
-    }
+    if (totalSelected === 0) return;
+    setShowClearDialog(true);
   };
 
   return (
@@ -60,6 +61,48 @@ const ActionBar = () => {
           </div>
         </div>
       </div>
+
+      <WinDialog
+        open={showDownloadDialog}
+        title="Download Script"
+        icon="📄"
+        onClose={() => setShowDownloadDialog(false)}
+        primaryAction={{
+          label: 'Download',
+          onClick: () => {
+            downloadScript();
+            setShowDownloadDialog(false);
+          },
+          variant: 'primary',
+        }}
+        secondaryAction={{
+          label: 'Close',
+          onClick: () => setShowDownloadDialog(false),
+        }}
+      >
+        Right-click the downloaded .bat file and select "Run as Administrator"
+      </WinDialog>
+
+      <WinDialog
+        open={showClearDialog}
+        title="Clear All"
+        icon="⚠️"
+        onClose={() => setShowClearDialog(false)}
+        primaryAction={{
+          label: 'Clear',
+          onClick: () => {
+            clearAll();
+            setShowClearDialog(false);
+          },
+          variant: 'danger',
+        }}
+        secondaryAction={{
+          label: 'Cancel',
+          onClick: () => setShowClearDialog(false),
+        }}
+      >
+        Clear all {totalSelected} selections?
+      </WinDialog>
     </div>
   );
 };

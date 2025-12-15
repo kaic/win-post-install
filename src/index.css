@@ -680,3 +680,22 @@ body.dark {
 .dark ::-webkit-scrollbar-button:vertical:increment {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M4 6L1 2h6z' fill='%23e0e0e0'/%3E%3C/svg%3E");
 }
+
+/* ================================================== */
+/* WIN-STYLE DIALOGS                                  */
+/* ================================================== */
+
+.win-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 9999;
+}
+
+.win-dialog {
+  max-width: calc(100vw - 32px);
+}
