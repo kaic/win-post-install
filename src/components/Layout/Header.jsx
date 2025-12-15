@@ -19,8 +19,6 @@ const Header = () => {
             • automatically installs selected programs<br />
             • adjusts selected settings<br />
             Everything automatically<br />
-            <br />
-            Right-click the downloaded .bat file and select "Run as Administrator"
           </p>
         </div>
         <button
