@@ -175,39 +175,6 @@ export const GpuZIcon = ({ size = 24, ...props }) => (
   </svg>
 );
 
-// CCleaner - Broom with official orange/red CCleaner colors
-export const CCleanerIcon = ({ size = 24, ...props }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    style={{ flexShrink: 0 }}
-    {...props}
-  >
-    <defs>
-      <linearGradient id="ccleaner-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#FF6B1A"/>
-        <stop offset="50%" stopColor="#E85500"/>
-        <stop offset="100%" stopColor="#CC4D00"/>
-      </linearGradient>
-    </defs>
-    {/* Broom handle */}
-    <rect x="10.5" y="2" width="3" height="12" rx="1.5" fill="#8B4513"/>
-    {/* Broom bristles */}
-    <path d="M7 14h10l1 2v6l-1 0H7l-1 0v-6z" fill="url(#ccleaner-grad)"/>
-    {/* Bristle details */}
-    <line x1="8" y1="16" x2="8" y2="22" stroke="#CC4D00" strokeWidth="0.5"/>
-    <line x1="10" y1="16" x2="10" y2="22" stroke="#CC4D00" strokeWidth="0.5"/>
-    <line x1="12" y1="16" x2="12" y2="22" stroke="#CC4D00" strokeWidth="0.5"/>
-    <line x1="14" y1="16" x2="14" y2="22" stroke="#CC4D00" strokeWidth="0.5"/>
-    <line x1="16" y1="16" x2="16" y2="22" stroke="#CC4D00" strokeWidth="0.5"/>
-    {/* Handle grip */}
-    <rect x="10.5" y="5" width="3" height="1" fill="#6B3410" opacity="0.5"/>
-    <rect x="10.5" y="8" width="3" height="1" fill="#6B3410" opacity="0.5"/>
-  </svg>
-);
-
 // BleachBit - Spray bottle for cleaning/bleaching data
 export const BleachBitIcon = ({ size = 24, ...props }) => (
   <svg
@@ -238,27 +205,6 @@ export const BleachBitIcon = ({ size = 24, ...props }) => (
     <circle cx="20" cy="5.5" r="0.4" fill="#85C1E9" opacity="0.4"/>
     {/* Label on bottle */}
     <rect x="9.5" y="11" width="5" height="3" fill="#fff" opacity="0.3"/>
-  </svg>
-);
-
-// Driver Booster - Update/boost icon
-export const DriverBoosterIcon = ({ size = 24, ...props }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    style={{ flexShrink: 0 }}
-    {...props}
-  >
-    <defs>
-      <linearGradient id="driver-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#00D4FF"/>
-        <stop offset="100%" stopColor="#0084FF"/>
-      </linearGradient>
-    </defs>
-    <path d="M12 2L4 12h5v8h6v-8h5L12 2z" fill="url(#driver-grad)"/>
-    <circle cx="12" cy="21" r="1.5" fill="#00D4FF"/>
   </svg>
 );
 
@@ -337,36 +283,6 @@ export const EMuleIcon = ({ size = 24, ...props }) => (
     <line x1="12" y1="12" x2="19" y2="6" stroke="#0057B7" strokeWidth="1.5"/>
     <line x1="12" y1="12" x2="5" y2="18" stroke="#0057B7" strokeWidth="1.5"/>
     <line x1="12" y1="12" x2="19" y2="18" stroke="#0057B7" strokeWidth="1.5"/>
-  </svg>
-);
-
-// Nero - Burning disc with flames (Nero Burning ROM)
-export const NeroIcon = ({ size = 24, ...props }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    style={{ flexShrink: 0 }}
-    {...props}
-  >
-    <defs>
-      <linearGradient id="nero-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#FF4444"/>
-        <stop offset="100%" stopColor="#CC0000"/>
-      </linearGradient>
-      <radialGradient id="nero-disc">
-        <stop offset="0%" stopColor="#666"/>
-        <stop offset="100%" stopColor="#333"/>
-      </radialGradient>
-    </defs>
-    {/* CD/DVD disc */}
-    <circle cx="12" cy="14" r="7" fill="url(#nero-disc)"/>
-    <circle cx="12" cy="14" r="2" fill="#111"/>
-    {/* Flames */}
-    <path d="M10 7c0-2 1-4 2-5 1 1 2 3 2 5 0 1-.5 2-1 2.5-.5-.5-1-1.5-1-2.5z" fill="url(#nero-grad)"/>
-    <path d="M7 9c-.5-1.5 0-3 .5-4 1 .5 1.5 2 2 3.5 0 .8-.5 1.3-1 1.5-.5-.3-.8-1-.5-1.5z" fill="#FF6600"/>
-    <path d="M15 9c.5-1.5 0-3-.5-4-1 .5-1.5 2-2 3.5 0 .8.5 1.3 1 1.5.5-.3.8-1 .5-1.5z" fill="#FF6600"/>
   </svg>
 );
 
@@ -496,13 +412,10 @@ export default {
   WinRarIcon,
   CpuZIcon,
   GpuZIcon,
-  CCleanerIcon,
   BleachBitIcon,
-  DriverBoosterIcon,
   RevoUninstallerIcon,
   WinampIcon,
   EMuleIcon,
-  NeroIcon,
   PowerISOIcon,
   UltraISOIcon,
   DirectXIcon,
