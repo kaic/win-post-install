@@ -12,5 +12,5 @@ export default {
   recommended: false,
   requiresRestart: true,
   requiresAdmin: true,
-  warning: 'Advanced/legacy tweak. Applies only to some TCP scenarios and can increase ACK traffic. Prefer Windows Update + game/network settings.'
+  warning: 'Important: This tweak takes effect but may not improve latency. TCP-only (no UDP impact) and can increase ACK traffic.'
 };
