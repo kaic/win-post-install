@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
 import { softwareCatalog } from '../data/software-catalog';
+import { configurations } from '../data/configurations';
 import { getCategoryItemIds } from '../utils/catalogHelpers';
 import { STORAGE_KEYS } from '../constants';
 
@@ -73,8 +74,30 @@ export function SelectionProvider({ children }) {
   // Check if all items in category are selected
   const isAllCategorySelected = useCallback((categoryId) => {
     const categoryItems = getCategoryItemIds(softwareCatalog, categoryId);
+    if (categoryItems.length === 0) return false;
     return categoryItems.every((id) => selectedSoftware.includes(id));
   }, [selectedSoftware]);
+
+  // Select all configurations in a category
+  const selectAllConfigsInCategory = useCallback((categoryId) => {
+    const categoryItems = getCategoryItemIds(configurations, categoryId);
+    setSelectedConfigs((prev) => [...new Set([...prev, ...categoryItems])]);
+  }, []);
+
+  // Deselect all configurations in a category
+  const deselectAllConfigsInCategory = useCallback((categoryId) => {
+    const categoryItems = getCategoryItemIds(configurations, categoryId);
+    setSelectedConfigs((prev) =>
+      prev.filter((id) => !categoryItems.includes(id))
+    );
+  }, []);
+
+  // Check if all configurations in category are selected
+  const isAllConfigCategorySelected = useCallback((categoryId) => {
+    const categoryItems = getCategoryItemIds(configurations, categoryId);
+    if (categoryItems.length === 0) return false;
+    return categoryItems.every((id) => selectedConfigs.includes(id));
+  }, [selectedConfigs]);
 
   // Clear all selections
   const clearAll = useCallback(() => {
@@ -100,6 +123,9 @@ export function SelectionProvider({ children }) {
     selectAllInCategory,
     deselectAllInCategory,
     isAllCategorySelected,
+    selectAllConfigsInCategory,
+    deselectAllConfigsInCategory,
+    isAllConfigCategorySelected,
     clearAll,
     clearSoftware,
     clearConfigs,
@@ -111,6 +137,9 @@ export function SelectionProvider({ children }) {
     selectAllInCategory,
     deselectAllInCategory,
     isAllCategorySelected,
+    selectAllConfigsInCategory,
+    deselectAllConfigsInCategory,
+    isAllConfigCategorySelected,
     clearAll,
     clearSoftware,
     clearConfigs,
