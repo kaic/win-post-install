@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SoftwareCard from './SoftwareCard';
 import { useSelection } from '../../context/SelectionContext';
 
-const CategorySection = ({ category, software }) => {
+const CategorySection = ({ category, software, isSearching }) => {
   const [expanded, setExpanded] = useState(true);
   const { isAllCategorySelected, selectAllInCategory, deselectAllInCategory } = useSelection();
 
   const allSelected = isAllCategorySelected(category.id);
+
+  useEffect(() => {
+    if (isSearching) {
+      setExpanded(true);
+    }
+  }, [isSearching]);
 
   const handleSelectAll = (e) => {
     e.stopPropagation();

@@ -1,8 +1,11 @@
 import { configCategories } from '../../data/categories';
 import { getConfigsByCategory } from '../../data/configurations';
 import ConfigSection from './ConfigSection';
+import { useSearchContext } from '../../context/SearchContext';
 
 const ConfigurationSelector = () => {
+  const { searchTerm } = useSearchContext();
+
   return (
     <div style={{ marginBottom: '16px' }}>
       <div className="win98-inset" style={{ padding: '12px', marginBottom: '12px' }}>
@@ -16,13 +19,24 @@ const ConfigurationSelector = () => {
 
       {configCategories.map((category) => {
         const categoryConfigs = getConfigsByCategory(category.id);
-        if (categoryConfigs.length === 0) return null;
+        
+        const filteredConfigs = categoryConfigs.filter((config) => {
+          if (!searchTerm) return true;
+          const searchLower = searchTerm.toLowerCase();
+          return (
+            config.name.toLowerCase().includes(searchLower) ||
+            (config.description && config.description.toLowerCase().includes(searchLower))
+          );
+        });
+
+        if (filteredConfigs.length === 0) return null;
 
         return (
           <ConfigSection
             key={category.id}
             category={category}
-            configs={categoryConfigs}
+            configs={filteredConfigs}
+            isSearching={!!searchTerm}
           />
         );
       })}
