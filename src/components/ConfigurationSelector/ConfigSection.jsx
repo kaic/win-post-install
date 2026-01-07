@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import ConfigOption from './ConfigOption';
 
-const ConfigSection = ({ category, configs }) => {
+const ConfigSection = ({ category, configs, isSearching }) => {
   const [expanded, setExpanded] = useState(true);
+  const [prevIsSearching, setPrevIsSearching] = useState(isSearching);
+
+  if (isSearching !== prevIsSearching) {
+    setPrevIsSearching(isSearching);
+    if (isSearching) {
+      setExpanded(true);
+    }
+  }
 
   return (
     <section style={{ marginBottom: '12px' }}>

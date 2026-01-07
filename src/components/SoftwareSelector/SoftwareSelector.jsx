@@ -1,10 +1,12 @@
 import { categories } from '../../data/categories';
 import { getSoftwareByCategory } from '../../data/software-catalog';
 import CategorySection from './CategorySection';
+import { useSearchContext } from '../../context/SearchContext';
 
 const SoftwareSelector = () => {
   // Sort categories by order
   const sortedCategories = [...categories].sort((a, b) => a.order - b.order);
+  const { searchTerm } = useSearchContext();
 
   return (
     <div style={{ marginBottom: '16px' }}>
@@ -19,13 +21,24 @@ const SoftwareSelector = () => {
 
       {sortedCategories.map((category) => {
         const categorySoftware = getSoftwareByCategory(category.id);
-        if (categorySoftware.length === 0) return null;
+        
+        const filteredSoftware = categorySoftware.filter((sw) => {
+          if (!searchTerm) return true;
+          const searchLower = searchTerm.toLowerCase();
+          return (
+            sw.name.toLowerCase().includes(searchLower) ||
+            (sw.description && sw.description.toLowerCase().includes(searchLower))
+          );
+        });
+
+        if (filteredSoftware.length === 0) return null;
 
         return (
           <CategorySection
             key={category.id}
             category={category}
-            software={categorySoftware}
+            software={filteredSoftware}
+            isSearching={!!searchTerm}
           />
         );
       })}
