@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-01-07
 
+- feat(search): add real-time catalog search and filtering ([#31](https://github.com/kaic/win-post-install/pull/31)) ([@Kaic](https://github.com/kaic))
 - feat(ui): add select all button to category headers ([#30](https://github.com/kaic/win-post-install/pull/30)) ([@Kaic](https://github.com/kaic))
 
 ### 2025-12-15
