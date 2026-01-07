@@ -1,18 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import SoftwareCard from './SoftwareCard';
 import { useSelection } from '../../context/SelectionContext';
 
 const CategorySection = ({ category, software, isSearching }) => {
   const [expanded, setExpanded] = useState(true);
+  const [prevIsSearching, setPrevIsSearching] = useState(isSearching);
   const { isAllCategorySelected, selectAllInCategory, deselectAllInCategory } = useSelection();
 
-  const allSelected = isAllCategorySelected(category.id);
-
-  useEffect(() => {
+  // Derived state: Automatically expand when search becomes active
+  if (isSearching !== prevIsSearching) {
+    setPrevIsSearching(isSearching);
     if (isSearching) {
       setExpanded(true);
     }
-  }, [isSearching]);
+  }
+
+  const allSelected = isAllCategorySelected(category.id);
 
   const handleSelectAll = (e) => {
     e.stopPropagation();
