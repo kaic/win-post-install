@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-21
 
+- chore(deps): bump globals from 16.5.0 to 17.14.0 ([#44](https://github.com/kaic/win-post-install/pull/44)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
 - ci(deps): bump actions/configure-pages from 4 to 6 ([#40](https://github.com/kaic/win-post-install/pull/40)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
 - ci(deps): bump actions/upload-pages-artifact from 3 to 5 ([#39](https://github.com/kaic/win-post-install/pull/39)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
 - ci(deps): bump actions/deploy-pages from 4 to 5 ([#37](https://github.com/kaic/win-post-install/pull/37)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
