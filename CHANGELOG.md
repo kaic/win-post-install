@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-20
 
+- docs(readme): add app screenshot header ([#35](https://github.com/kaic/win-post-install/pull/35)) ([@Kaic](https://github.com/kaic))
 - chore(deps): add dependabot and refresh dependencies ([#34](https://github.com/kaic/win-post-install/pull/34)) ([@Kaic](https://github.com/kaic))
 
 ### 2026-01-07
