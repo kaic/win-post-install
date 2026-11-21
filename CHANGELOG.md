@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-21
 
+- chore(deps): bump @vitejs/plugin-react to 6.3.0 ([#60](https://github.com/kaic/win-post-install/pull/60)) ([@Kaic](https://github.com/kaic))
 - docs: sync software and configuration counts ([#59](https://github.com/kaic/win-post-install/pull/59)) ([@Kaic](https://github.com/kaic))
 - chore(deps): bump vite to 8 and convert manualChunks to a function ([#58](https://github.com/kaic/win-post-install/pull/58)) ([@Kaic](https://github.com/kaic))
 - chore(deps): bump eslint-plugin-react-refresh to 0.5.8 ([#57](https://github.com/kaic/win-post-install/pull/57)) ([@Kaic](https://github.com/kaic))
