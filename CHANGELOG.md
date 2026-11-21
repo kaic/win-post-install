@@ -9,6 +9,10 @@ This changelog is automatically generated from git commits.
 <!-- CHANGELOG_START -->
 
 
+### 2026-11-21
+
+- feat(catalog): add WizTree ([#52](https://github.com/kaic/win-post-install/pull/52)) ([@Kaic](https://github.com/kaic))
+
 ### 2026-11-20
 
 - feat(catalog): add Zen Browser ([#51](https://github.com/kaic/win-post-install/pull/51)) ([@Kaic](https://github.com/kaic))
