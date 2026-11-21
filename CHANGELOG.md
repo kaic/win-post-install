@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-20
 
+- feat(catalog): add Nextcloud desktop client ([#46](https://github.com/kaic/win-post-install/pull/46)) ([@Kaic](https://github.com/kaic))
 - docs(readme): add app screenshot header ([#35](https://github.com/kaic/win-post-install/pull/35)) ([@Kaic](https://github.com/kaic))
 - chore(deps): add dependabot and refresh dependencies ([#34](https://github.com/kaic/win-post-install/pull/34)) ([@Kaic](https://github.com/kaic))
 
