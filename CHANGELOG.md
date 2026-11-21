@@ -9,6 +9,10 @@ This changelog is automatically generated from git commits.
 <!-- CHANGELOG_START -->
 
 
+### 2026-11-20
+
+- chore(deps): add dependabot and refresh dependencies ([#34](https://github.com/kaic/win-post-install/pull/34)) ([@Kaic](https://github.com/kaic))
+
 ### 2026-01-07
 
 - feat(ui): add select all button to configuration sections ([#32](https://github.com/kaic/win-post-install/pull/32)) ([@Kaic](https://github.com/kaic))
