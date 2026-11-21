@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-21
 
+- chore(deps): bump eslint-plugin-react-refresh to 0.5.8 ([#57](https://github.com/kaic/win-post-install/pull/57)) ([@Kaic](https://github.com/kaic))
 - chore(deps): bump eslint from 9.39.5 to 10.15.0 ([#45](https://github.com/kaic/win-post-install/pull/45)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
 - chore(deps): bump glob from 13.0.7 to 14.0.6 ([#42](https://github.com/kaic/win-post-install/pull/42)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
 - chore(deps): bump globals from 16.5.0 to 17.14.0 ([#44](https://github.com/kaic/win-post-install/pull/44)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
