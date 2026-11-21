@@ -9,6 +9,14 @@ This changelog is automatically generated from git commits.
 <!-- CHANGELOG_START -->
 
 
+### 2026-11-21
+
+- ci(deps): bump actions/configure-pages from 4 to 6 ([#40](https://github.com/kaic/win-post-install/pull/40)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- ci(deps): bump actions/upload-pages-artifact from 3 to 5 ([#39](https://github.com/kaic/win-post-install/pull/39)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- ci(deps): bump actions/deploy-pages from 4 to 5 ([#37](https://github.com/kaic/win-post-install/pull/37)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- ci(deps): bump actions/setup-node from 4 to 7 ([#38](https://github.com/kaic/win-post-install/pull/38)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- ci(deps): bump actions/checkout from 4 to 7 ([#36](https://github.com/kaic/win-post-install/pull/36)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
 ### 2026-11-20
 
 - feat: Added Opera Browser ([#33](https://github.com/kaic/win-post-install/pull/33)) ([@Nolan Bragan](https://github.com/ngbcoder))
