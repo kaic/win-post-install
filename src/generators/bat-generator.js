@@ -4,6 +4,7 @@ import {
   formatWingetCommand,
   getDateTime,
 } from './script-utils';
+import { WINGET_PREFLIGHT_BAT } from './winget-preflight';
 
 /**
  * Generate Windows Batch (.bat) script
@@ -62,7 +63,7 @@ echo.
 echo Installing selected software...
 echo This may take a while depending on your internet connection.
 echo.
-`;
+${WINGET_PREFLIGHT_BAT}`;
 
   const grouped = groupSoftwareByCategory(selectedIds);
 
