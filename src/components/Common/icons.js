@@ -97,6 +97,7 @@ export {
   FaFilePdf,
   FaFilm,
   FaGamepad,
+  FaGlobe,
   FaImage,
   FaMicrosoft,
   FaPlay,
