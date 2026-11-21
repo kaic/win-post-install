@@ -1,5 +1,7 @@
 # Windows Post-Install Script Generator
 
+![Windows Post-Install Script Generator](docs/screenshot.png)
+
 A web-based tool that generates customized Windows post-installation batch scripts. Select from 115 software applications and 80 Windows configurations to create a personalized setup script.
 
 ---
