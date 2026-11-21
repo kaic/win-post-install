@@ -2,7 +2,7 @@
 
 ![Windows Post-Install Script Generator](docs/screenshot.png)
 
-A web-based tool that generates customized Windows post-installation batch scripts. Select from 117 software applications and 80 Windows configurations to create a personalized setup script.
+A web-based tool that generates customized Windows post-installation batch scripts. Select from 118 software applications and 80 Windows configurations to create a personalized setup script.
 
 ---
 
@@ -36,7 +36,7 @@ Runs entirely in your browser — no installation required.
 
 ## Features
 
-- **117 Software Applications:** Curated apps across 13 categories  
+- **118 Software Applications:** Curated apps across 13 categories  
 - **80 System Configurations:** Performance, privacy, UI, gaming tweaks  
 - **Cleanup Tools:** Remove bloatware safely  
 - **One-Click Script Generation:** Ready-to-run batch file  
