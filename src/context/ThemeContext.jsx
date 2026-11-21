@@ -31,4 +31,5 @@ export function ThemeProvider({ children }) {
 
 ThemeProvider.displayName = 'ThemeProvider';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { ThemeContext };
