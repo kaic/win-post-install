@@ -68,7 +68,7 @@ win-post-install/
 │   │   ├── Layout/          # Header, Footer, Layout
 │   │   └── SoftwareSelector/       # Software selection UI
 │   ├── data/
-│   │   ├── software-catalog.js     # Software definitions (115+ apps)
+│   │   ├── software-catalog.js     # Software definitions (126+ apps)
 │   │   ├── configurations.js       # System configurations (80 tweaks)
 │   │   └── categories.js           # Category definitions
 │   ├── generators/
