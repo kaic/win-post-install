@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-20
 
+- feat(catalog): add Helium browser ([#50](https://github.com/kaic/win-post-install/pull/50)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add System Informer ([#49](https://github.com/kaic/win-post-install/pull/49)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add FastStone Image Viewer ([#48](https://github.com/kaic/win-post-install/pull/48)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add Notepad3 ([#47](https://github.com/kaic/win-post-install/pull/47)) ([@Kaic](https://github.com/kaic))
