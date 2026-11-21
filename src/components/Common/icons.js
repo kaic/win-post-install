@@ -49,6 +49,7 @@ export {
   SiMega,
   SiMusicbrainz,
   SiNeovim,
+  SiNextcloud,
   SiNodedotjs,
   SiNordvpn,
   SiNotion,
