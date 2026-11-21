@@ -9,6 +9,10 @@ This changelog is automatically generated from git commits.
 <!-- CHANGELOG_START -->
 
 
+### 2026-11-20
+
+- feat: Added Opera Browser ([#33](https://github.com/kaic/win-post-install/pull/33)) ([@Nolan Bragan](https://github.com/ngbcoder))
+
 ### 2026-11-21
 
 - fix(generator): warn when the winget source cannot be updated ([#56](https://github.com/kaic/win-post-install/pull/56)) ([@Kaic](https://github.com/kaic))
