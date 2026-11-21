@@ -10,9 +10,10 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-icons': ['react-icons/si', 'react-icons/fa', 'react-icons/fi', 'react-icons/vsc'],
+        // Vite 8 (Rolldown) only accepts manualChunks as a function
+        manualChunks(id) {
+          if (/node_modules\/(react|react-dom|scheduler)\//.test(id)) return 'vendor-react'
+          if (/node_modules\/react-icons\//.test(id)) return 'vendor-icons'
         },
       },
     },
