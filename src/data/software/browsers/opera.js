@@ -7,6 +7,6 @@ export default {
   "icon": "SiOpera",
   "iconColor": "#CC0F16",
   "popular": true,
-  "requiresAdmin": false,
+  "requiresAdmin": true,
   "license": "free"
 };

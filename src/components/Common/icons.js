@@ -57,6 +57,7 @@ export {
   SiObsidian,
   SiObsstudio,
   SiOpenjdk,
+  SiOpera,
   SiOracle,
   SiPostman,
   SiProtondrive,

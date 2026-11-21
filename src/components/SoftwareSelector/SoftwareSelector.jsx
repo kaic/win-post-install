@@ -2,7 +2,6 @@ import { categories } from '../../data/categories';
 import { getSoftwareByCategory } from '../../data/software-catalog';
 import CategorySection from './CategorySection';
 import { useSearchContext } from '../../context/SearchContext';
-import * as SiIcons from 'react-icons/si';
 
 const SoftwareSelector = () => {
   // Sort categories by order
