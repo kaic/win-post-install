@@ -98,6 +98,7 @@ export {
   FaFilm,
   FaGamepad,
   FaGlobe,
+  FaHdd,
   FaImage,
   FaMicrosoft,
   FaPlay,
