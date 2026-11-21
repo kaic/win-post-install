@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-21
 
+- feat(catalog): add Display Driver Uninstaller ([#54](https://github.com/kaic/win-post-install/pull/54)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add Bulk Crap Uninstaller ([#53](https://github.com/kaic/win-post-install/pull/53)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add WizTree ([#52](https://github.com/kaic/win-post-install/pull/52)) ([@Kaic](https://github.com/kaic))
 
