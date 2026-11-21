@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-20
 
+- feat(catalog): add FastStone Image Viewer ([#48](https://github.com/kaic/win-post-install/pull/48)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add Notepad3 ([#47](https://github.com/kaic/win-post-install/pull/47)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add Nextcloud desktop client ([#46](https://github.com/kaic/win-post-install/pull/46)) ([@Kaic](https://github.com/kaic))
 - docs(readme): add app screenshot header ([#35](https://github.com/kaic/win-post-install/pull/35)) ([@Kaic](https://github.com/kaic))
