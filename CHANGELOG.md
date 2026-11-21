@@ -11,6 +11,7 @@ This changelog is automatically generated from git commits.
 
 ### 2026-11-20
 
+- feat(catalog): add Zen Browser ([#51](https://github.com/kaic/win-post-install/pull/51)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add Helium browser ([#50](https://github.com/kaic/win-post-install/pull/50)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add System Informer ([#49](https://github.com/kaic/win-post-install/pull/49)) ([@Kaic](https://github.com/kaic))
 - feat(catalog): add FastStone Image Viewer ([#48](https://github.com/kaic/win-post-install/pull/48)) ([@Kaic](https://github.com/kaic))
