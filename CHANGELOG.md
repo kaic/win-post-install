@@ -9,6 +9,10 @@ This changelog is automatically generated from git commits.
 <!-- CHANGELOG_START -->
 
 
+### 2026-11-24
+
+- chore(deps): bump @eslint/js from 9.39.5 to 10.0.1 ([#61](https://github.com/kaic/win-post-install/pull/61)) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
 ### 2026-11-21
 
 - chore(deps): bump @vitejs/plugin-react to 6.3.0 ([#60](https://github.com/kaic/win-post-install/pull/60)) ([@Kaic](https://github.com/kaic))
